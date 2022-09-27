@@ -1,0 +1,26 @@
+$${#verticalrepeats = $$[VerticalRepeats]}$$
+$${#horizontalrepeats = $$[HorizontalRepeats] - 1}$$
+$${#counter = 1}$$
+$${#movehorizontalstep = 1 + $$[XDimension]}$$
+$${#movevertical = 1 + $$[YDimension]}$$
+$${#movehorizontalreset = %#movehorizontalstep% * %#horizontalrepeats%}$$
+//shift 1 east
+//contract 1 up
+//expand $$[XDimension] east
+//expand $$[YDimension] up
+$${DO(%#verticalrepeats%)}$$
+$${DO(%#horizontalrepeats%)}$$
+$${WAIT(1)}$$
+//copy
+$${WAIT(1)}$$
+$${ECHO(//schem save $$[FileNameRoot]%#counter%}$$
+$${WAIT(1)}$$
+$${ECHO(//shift %#movehorizontalstep% east)}$$
+$${INC(#counter)}$$
+$${LOOP}$$
+$${WAIT(1)}$$
+$${ECHO(//shift %#movevertical% up)}$$
+$${WAIT(1)}$$
+$${ECHO(//shift %#movehorizontalreset% west)}$$
+$${WAIT(1)}$$
+$${LOOP}$$

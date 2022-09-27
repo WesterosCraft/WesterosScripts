@@ -1,0 +1,13 @@
+//replace 35:9 24:2
+//replace 2111:0 2003:0
+//replace 2111:1 2003:1
+//replace 2111:2 2003:2
+//replace 2111:3 2003:3
+//replace 2008:0 2163:2
+//replace 2041:11 2008:8
+//replace 2107:4 2165:4
+//replace 2107:5 2165:5
+//replace 2107:6 2165:6
+//replace 2107:7 2165:7
+//replace 2020:0,42:0 2025:7
+//replace 2138:9 2163:8

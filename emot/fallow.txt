@@ -1,0 +1,13 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+//gmask <0|
+$${WAIT(1)}$$|
+//replace $$[placeholder] 90%2034,5%13,5%3|
+$${WAIT(1)}$$|
+//gmask >3|
+$${WAIT(1)}$$|
+//replace 0 31:1,31:2
+$${WAIT(2)}$$|
+$${LOG(Script Complete)}$$|

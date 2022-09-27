@@ -1,0 +1,141 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[Inside] white
+$${WAIT(1)}$$|
+//replace [wool] #biome[swampland]
+
+$${LOG(Determining Outer Layer)}$$
+$${WAIT(2)}$$|
+//gmask <[air]
+$${WAIT(1)}$$|
+//replace wool&\|[$$[Outside]][1][6]]&![\|[air][1][5]] red|
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//gmask
+
+$${LOG(Filling Some Puddles)}$$
+$${WAIT(2)}$$|
+//replace [white]&[=perlin(5,x,y,z,.25,5,.3)<.3] blue
+$${WAIT(1)}$$|
+//replace [red]&[=perlin(5,x,y,z,.25,5,.3)<.2] blue
+
+$${LOG(Framing The Puddles)}$$
+$${WAIT(2)}$$|
+//replace [[white,red]&~[blue][1][8]]] green
+$${WAIT(1)}$$|
+//replace [[white]&~[green][1][8]]] 30%green,70%white
+$${WAIT(1)}$$|
+//replace [[red]&~[green][1][8]]] 30%green,70%red
+$${WAIT(1)}$$|
+//replace [[white,red]&~[green][1][8]]] black
+$${WAIT(1)}$$|
+//replace [[white,red]&~[black][1][8]]] black
+$${WAIT(1)}$$|
+//replace [[red]&~[black][1][8]]] black,red
+$${WAIT(1)}$$|
+//replace [[white]&~[black][1][8]]] black,white
+
+$${LOG(Cutting Puddles That Come Too Close To The Border)}$$
+$${WAIT(2)}$$|
+//replace [[green,blue]&\|[grass][1][8]]] black
+$${WAIT(1)}$$|
+//replace [[blue]&~[black][1][8]]] green
+
+$${LOG(Generate Spacers For Dead Trees)}$$
+$${WAIT(2)}$$
+//gmask [air]&>[black]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(2+random()))+round(abs(z)%(2.5+random()))==0
+$${WAIT(2)}$$|
+//replace #offset[3][0][3][95:0] 20|
+$${WAIT(1)}$$|
+/gmask [air,95]
+$${WAIT(1)}$$|
+//replace 20 [#fullcopy[SpacerW1]]
+$${WAIT(1)}$$|
+//replace [[air]&\|[168][2][8]]] 168
+$${WAIT(1)}$$|
+//replace 95 air
+$${WAIT(1)}$$|
+/gmask
+$${WAIT(1)}$$|
+//replace 2158:5 95:0
+$${WAIT(1)}$$|
+
+$${LOG(Generate Spacers For Debris)}$$
+$${WAIT(2)}$$
+//gmask [air]&>[black]
+$${WAIT(1)}$$
+//generate -o [95:1] round(abs(x)%(4+random()))+round(abs(z)%(3.5+random()))==0
+$${WAIT(1)}$$
+//replace #offset[3][0][3][95:1] 21|
+$${WAIT(1)}$$|
+/gmask [air,95]
+$${WAIT(1)}$$|
+//replace 21 [#fullcopy[SpacerW1]]
+$${WAIT(1)}$$|
+/gmask
+$${WAIT(1)}$$|
+//replace 2158 95:1
+
+$${LOG(Cleanup)}$$
+$${WAIT(2)}$$|
+//replace 20,21,168 air
+
+$${LOG(Plant Debris)}$$
+
+$${LOG(Dead Trees)}$$
+$${WAIT(2)}$$|
+//replace #offset[3][0][3][95:0] 21,24,22|
+$${WAIT(1)}$$|
+//replace 21 10%[#fullcopy[SentinelSL1][false][false]],10%[#fullcopy[SentinelSL2][false][false]],10%[#fullcopy[SentinelSL3][false][false]],10%[#fullcopy[SentinelSL4][false][false]],10%[#fullcopy[SentinelSL5][false][false]]|
+$${WAIT(1)}$$|
+//replace 24 10%[#fullcopy[SentinelSL8][false][false]],10%[#fullcopy[SentinelSL5][false][false]],10%[#fullcopy[SentinelSL6][false][false]],10%[#fullcopy[SentinelSL7][false][false]],10%[#fullcopy[SentinelSL5][false][false]]|
+
+$${LOG(Young Ones)}$$
+$${WAIT(2)}$$|
+//replace 22 10%[#fullcopy[SentinelY1][false][false]],10%[#fullcopy[SentinelY2][false][false]],10%[#fullcopy[SentinelY3][false][false]],10%[#fullcopy[SentinelY4][false][false]]|
+$${WAIT(1)}$$|
+
+//replace #offset[3][0][3][95:1] 23,25|
+$${WAIT(1)}$$|
+$${LOG(Branches)}$$
+//replace 23 10%[#fullcopy[ThamBranchJun1][false][false]],10%[#fullcopy[ThamBranchJun2][false][false]],10%[#fullcopy[ThamBranchJun3][false][false]],10%[#fullcopy[ThamBranchJun4][false][false]],5%[#fullcopy[ThamBranchJun5][false][false]]|
+$${WAIT(1)}$$|
+//replace 25 10%[#fullcopy[ThamCWD1][false][false]],10%[#fullcopy[ThamCWD2][false][false]],10%[#fullcopy[ThamCWD3][false][false]],10%[#fullcopy[ThamCWD4][false][false]],5%[#fullcopy[ThamCWD5][false][false]]|
+
+//replace 95,20,21,22,23,24,25 air
+
+$${LOG(Wool Transformations)}$$
+$${WAIT(2)}$$|
+//replace white,red $$[Outside]
+$${WAIT(1)}$$|
+//replace <[blue] 2034:0
+$${WAIT(1)}$$|
+//replace >[blue]&[air] 30%2066:12,70%air
+$${WAIT(1)}$$|
+//replace blue water
+$${WAIT(1)}$$|
+//replace >[green]&[air] 15%2205:4,25%2205:7,60%2005:12
+$${WAIT(1)}$$|
+//replace green 90%2034:1,10%2034:0
+$${WAIT(1)}$$|
+//replace >[black]&[air] 80%2005:12,20%2059:2
+$${WAIT(1)}$$|
+//replace black 45%2034:0,20%2033:4,10%gravel,25%dirt,10%grass
+$${WAIT(1)}$$|
+
+$${LOG(Script Completed)}$$

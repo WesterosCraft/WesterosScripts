@@ -1,0 +1,53 @@
+$${LOG(Bushes)}$$
+$${WAIT(1)}$$|
+//replace [[air]&>[green]] #simplex[8][30%95:0,70%air]
+$${WAIT(1)}$$|
+//replace ~[![95:0]][0][3]]&[95:0] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&>95:1]] 80%95:0,20%air
+$${WAIT(1)}$$|
+//replace [95:0] 18:0
+$${WAIT(1)}$$|
+//replace [95:1] 2009:7
+$${WAIT(1)}$$|
+
+$${LOG(Wool Transformations)}$$
+$${WAIT(2)}$$|
+//replace [air]&>[white] 40%2059:2,30%2005:11,30%2005:11,10%2155:0
+$${WAIT(1)}$$|
+//replace white 10%dirt,70%2033:3,20%2034:0
+$${WAIT(1)}$$|
+//replace <[blue] 2034:0
+$${WAIT(1)}$$|
+//replace [air]&>[blue] #simplex[14][60%air,40%95:0]
+$${WAIT(1)}$$|
+//replace [air]&>[blue] #simplex[3][48%air,52%95:1]
+$${WAIT(1)}$$|
+//replace blue water
+$${WAIT(1)}$$|
+//replace [air]&>[green] #simplex[14][90%air,10%2205:3]
+$${WAIT(1)}$$|
+//replace [air]&>[green] #simplex[10][88%air,10%2205:1,2%2005:1]
+$${WAIT(1)}$$|
+//replace [air]&>[green] #simplex[4][95%air,5%2061:8]
+$${WAIT(1)}$$|
+//replace [air]&>[green] #simplex[2][98%air,1%2061:3,1%2061:4]
+$${WAIT(1)}$$|
+//replace [air]&>[green] #simplex[3][97%air,1%2156:0,2%2205:4]
+$${WAIT(1)}$$|
+//replace [air]&>[green] #simplex[6][95%air,2%2156:0,3%2205:4]
+$${WAIT(1)}$$|
+//replace [air]&>[green] #simplex[6][95%air,2%2156:0,3%2205:4]
+$${WAIT(1)}$$|
+//replace green 40%2034:1,20%2033:3,20%2034:0,10%brown
+$${WAIT(1)}$$|
+//replace >[brown]&[air] 31:1 
+$${WAIT(1)}$$|
+//replace brown dirt,grass
+$${WAIT(1)}$$|
+//replace red 30%2033:3,30%dirt,40%grass
+$${WAIT(1)}$$|
+
+$${LOG(Glass Transformations)}$$
+//replace [95:0] 2155:2
+//replace [95:1] 2066:12

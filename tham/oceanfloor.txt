@@ -1,0 +1,30 @@
+//shift 150 d|
+//gmask <0,8,9
+$${WAIT(3)}$$
+//expand 4 u|
+//contract 1 u|
+$${WAIT(500ms)}$$
+//replace bedrock,2029:4,12,2012:1,2012:6 90%bedrock,10%2029:4|
+$${WAIT(3)}$$
+//shift 5 u|
+//expand 1 d|
+//replace bedrock,2029:4,12,2012:1,2012:6 50%bedrock,50%2029:4|
+$${WAIT(3)}$$
+//shift 5 u|
+//replace bedrock,2029:4,12,2012:1,2012:6 20%bedrock,70%2029:4,5%2012:1,5%2012:6
+$${WAIT(3)}$$
+//shift 5 u|
+//replace bedrock,2029:4,12,2012:1,2012:6 50%2029:4,10%13,20%2012:1,20%2012:6
+$${WAIT(3)}$$
+//shift 5 u|
+//replace bedrock,2029:4,12,2012:1,2012:6 20%2029:4,10%13,35%2012:1,10%2012:6
+$${WAIT(3)}$$
+//shift 5 u|
+//replace bedrock,2029:4,12,2012:1,2012:6 5%2029:4,15%13,40%2012:1,40%2012:6
+$${WAIT(3)}$$
+//shift 5 u|
+$${WAIT(500ms)}$$
+//contract 2 d|
+//replace bedrock,2029:4,12,2012:1,2012:6 6%13,47%2012:1,47%2012:6
+$${WAIT(3)}$$
+$${LOG(Script Complete)}$$|

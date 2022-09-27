@@ -1,0 +1,127 @@
+$${LOG(This script generates treeplacement and places a selection of specifically picked schematics for the Whitegrove forests)}$$
+$${LOG(After running the script the ground will be covered in yellow and white wool:)}$$
+$${LOG(Yellow indicating areas of the ground that are underneath the canopy)}$$
+$${LOG(White indicating areas of the ground that have only the sky above them)}$$
+
+
+$${LOG(First we replace the placeholder with white wool to have a clean basis to work from)}$$
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace #surface&$$[PlaceholderLand] white
+$${WAIT(1)}$$|
+//replace [wool] #biome[forest]
+
+$${LOG(Next we generate the tree placement)}$$
+$${WAIT(1)}$$
+//gmask [air]&>[white]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(2.5+random()))-round(abs(z)%(3.5+random()))==0
+$${WAIT(2)}$$|
+//gmask [95:0]
+$${WAIT(1)}$$
+//generate -o [95:1] (round(abs(x)%(2.5))-round(abs(z)%(2)))==0
+
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:1] air
+$${WAIT(1)}$$|
+//replace [[95]&~[95][1][8]] air
+$${WAIT(1)}$$|
+//replace 95 20%air,80%95
+
+$${LOG(Next we cull trees that are placed too close to each other. We use a spacer schematic to do this.)}$$
+$${WAIT(1)}$$|
+//expand 15 n,w,e,s|
+$${WAIT(1)}$$|
+$${LOG(Since the origin of each schematic is in it's North-Western corner after we've created them with Tham's SchemGenerator, we first have to offset the block we want to ultimately place the schematic on. So Target block => Offset => Schem places actually on the target block. The spacer is fairly small so here we use an offset of 4!)}$$
+//replace #offset[4][0][4][95:0] 251:0|
+$${WAIT(1)}$$|
+//replace 95 air
+
+$${LOG(We place the spacer on those blocks we later replace with trees, this allows us to discern between ground that's likely underneath a canopy and ground that's under the open sky)}$$
+$${LOG(Masking 251:0 also means that this purges clusters of trees that stand too close i.e. within the diameter of a spacer)}$$
+$${WAIT(1)}$$|
+/gmask [air,251:0]
+$${WAIT(1)}$$
+//replace 251:0 [#fullcopy[SpacerS1][false][false]]
+$${WAIT(1)}$$
+/gmask
+
+$${LOG(Ground under the canopy is marked with yellow wool, the ground right under the stem of each tree is marked with brown wool)}$$
+$${WAIT(1)}$$
+//replace [[white]&[<168]] yellow|
+$${WAIT(1)}$$
+//replace [[white]&[>168]] yellow|
+$${WAIT(1)}$$
+//replace [2158:5] 95:0|
+$${WAIT(1)}$$
+//replace [168,251:0] air|
+$${WAIT(1)}$$
+//replace <[95:0] brown|
+
+$${LOG(Now we use simplex to determine which trees cluster together)}$$
+$${WAIT(1)}$$|
+//replace [95] #simplex[8][25%95:8,5%95:9,15%95:0,5%95:1,10%95:2,10%95:3,10%95:4,10%95:5,5%95:6,5%95:7]
+
+$${LOG(And then place the offset placeholders. The offset has previously been calculated for each schematic according to the instructions in Thamus' SchemGenerator script)}$$
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:0] 251:0|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:1] 251:1|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:2] 251:2|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:3] 251:3|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:4] 251:4|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:5] 251:5|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:6] 251:6|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:7] 251:7|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:8] 251:8|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:9] 251:9|
+
+$${LOG(Replacing the offset placeholders with the fullcopy command places the trees right where we want them!)}$$
+$${WAIT(1)}$$|
+//replace 251:0 10%[#fullcopy[ForestOak1][false][false]],10%[#fullcopy[ForestOak2][false][false]],10%[#fullcopy[ForestOak3][false][false]],10%[#fullcopy[ForestOak4][false][false]],10%[#fullcopy[ForestOak5][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:1 10%[#fullcopy[ForestOak6][false][false]],10%[#fullcopy[ForestOak8][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:2 10%[#fullcopy[ForestBeech1][false][false]],10%[#fullcopy[ForestBeech2][false][false]],10%[#fullcopy[ForestBeech3][false][false]],10%[#fullcopy[ForestBeech4][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:3 10%[#fullcopy[ForestBeech5][false][false]],10%[#fullcopy[ForestBeech6][false][false]],10%[#fullcopy[ForestBeech8][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:4 10%[#fullcopy[ForestBeech9][false][false]],10%[#fullcopy[ForestBeech10][false][false]],10%[#fullcopy[ForestBeech12][false][false]],10%[#fullcopy[ForestBeech14][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:5 10%[#fullcopy[ForestOak9][false][false]],10%[#fullcopy[ForestOak10][false][false]],10%[#fullcopy[ForestOak12][false][false]],10%[#fullcopy[ForestOak14][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:6 10%[#fullcopy[ThamFMapleM1][false][false]],10%[#fullcopy[ThamFMapleM2][false][false]],10%[#fullcopy[ThamFMapleM3][false][false]],10%[#fullcopy[ThamFMapleM4][false][false]],10%[#fullcopy[ThamFMapleM5][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:7 10%[#fullcopy[ThamFMapleM6][false][false]],10%[#fullcopy[ThamFMapleM8][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:8 10%[#fullcopy[ThamFAlderM1][false][false]],10%[#fullcopy[ThamFAlderM2][false][false]],10%[#fullcopy[ThamFAlderM3][false][false]],10%[#fullcopy[ThamFAlderM4][false][false]],10%[#fullcopy[ThamFAlderM5][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:9 10%[#fullcopy[ThamFAlderM6][false][false]],10%[#fullcopy[ThamFAlderM8][false][false]]|
+
+$${LOG(All placeholders that for some reason were not correctly replaced are removed and minor quirks ironed out)}$$
+$${WAIT(1)}$$|
+//replace [[251]&>[wool]] air
+$${WAIT(1)}$$|
+//replace [[251]&~[wool][1][8]] white
+$${WAIT(1)}$$|
+//replace [[air]&\|[brown][1][4]] yellow
+$${WAIT(1)}$$|
+//replace [95,251] air
+
+$${LOG(Fix some of the holes created from using the spacer disks on steep terrain. Use Tham's HoleStuffer9000 script to fix the pesky single block dents before generating vegetation!)}$$
+$${WAIT(1)}$$|
+//replace [[air]&~[yellow][3][8]] yellow
+$${WAIT(1)}$$|
+//replace [[air]&~[white][2][8]] white
+
+$${LOG(Script Completed)}$$

@@ -1,0 +1,27 @@
+$${PROMPT(&direction,$$[direction],direction)}$$|
+$${DO($$[repeats])}$$|
+//gmask >$$[placeholder]|
+//set 35:1|
+//expand 1 u|
+$${WAIT(2)}$$|
+//gmask >35:1|
+//set 35:2|
+//gmask|
+$${WAIT(2)}$$|
+//replace 35:1,35:2 5%2009:15,5%2009:13,40%18:7,50%2016:3|
+$${WAIT(2)}$$|
+//contract 1 d|
+//expand 1 d|
+//replace $$[placeholder] 45%3,45%13,10%88|
+$${WAIT(2)}$$|
+$${ECHO(//shift 1 %&direction%)}$$|
+//replace $$[placeholder] 45%3,45%13,10%88|
+$${WAIT(2)}$$|
+$${ECHO(//shift 1 %&direction%)}$$|
+//replace $$[placeholder] 45%3,45%13,10%88|
+$${WAIT(2)}$$|
+//contract 1 u|
+$${ECHO(//shift 1 %&direction%)}$$|
+$${LOOP}$$|
+$${WAIT(2)}$$|
+$${LOG(Script Complete)}$$|

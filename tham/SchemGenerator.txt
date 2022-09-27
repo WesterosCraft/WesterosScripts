@@ -1,0 +1,41 @@
+$${LOG(Before you start using this script)}$$
+$${LOG(use //sel cuboid to select)}$$
+$${LOG(the bottom, western-most edge of the frame that marks)}$$
+$${LOG(the soil of the row that you wish to turn into schematics.)}$$
+$${LOG(Skip the southern and northern-most blocks of this edge.)}$$
+$${LOG(For a visual guide, /warp schemgeneratorguide)}$$
+$${LOG(WARNING: This script will simply overwrite files. This cannot be undone!)}$$
+
+$${#verticalrepeats = $$[VerticalRepeats]}$$
+$${#horizontalrepeats = $$[HorizontalRepeats]}$$
+$${#counter = 1}$$
+$${#movehorizontalstep = 1 + $$[XDimension]}$$
+$${#movevertical = 1 + $$[YDimension]}$$
+$${#expandhorizontal = $$[XDimension] - 1}$$
+$${#expandvertical = $$[YDimension] - 1}$$
+$${#movehorizontalreset = %#movehorizontalstep% * %#horizontalrepeats%}$$
+//shift 1 east
+//shift 1 up
+$${ECHO(//shift %#expandhorizontal% east)}$$
+$${ECHO(//shift %#expandvertical% up)}$$
+$${ECHO(//expand %#expandhorizontal% west)}$$
+$${ECHO(//expand %#expandvertical% down)}$$
+//toggleplace
+$${DO(%#verticalrepeats%)}$$
+$${DO(%#horizontalrepeats%)}$$
+$${WAIT(1)}$$
+//copy
+$${WAIT(1)}$$
+$${LOG(Saving $$[FileNameRoot]%#counter%)}$$
+$${ECHO(//schematic save $$[FileNameRoot]%#counter%)}$$
+$${WAIT(1)}$$
+$${ECHO(//shift %#movehorizontalstep% east)}$$
+$${INC(#counter)}$$
+$${LOOP}$$
+$${WAIT(1)}$$
+$${ECHO(//shift %#movevertical% up)}$$
+$${WAIT(1)}$$
+$${ECHO(//shift %#movehorizontalreset% west)}$$
+$${WAIT(1)}$$
+$${LOOP}$$
+//toggleplace

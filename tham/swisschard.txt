@@ -1,0 +1,13 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+//replace [0]&[>[$$[placeholder]]] 10%2005:11,45%2155:1,45%2205:3|
+$${WAIT(1)}$$|
+/storm|
+$${WAIT(1)}$$|
+//replace $$[placeholder] farmland|
+$${WAIT(1)}$$|
+/sun|
+$${WAIT(2)}$$|
+$${LOG(Script Complete)}$$|

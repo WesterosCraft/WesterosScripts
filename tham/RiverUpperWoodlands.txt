@@ -1,0 +1,152 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[PlaceholderLand] wool:white
+
+$${WAIT(1)}$$|
+//replace [[wool:white]&~[$$[PlaceholderWater]][1][8]] wool:red|
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]&[~[wool:red][1][8]] wool:red
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]&[~[wool:red][1][8]] wool:red
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]&[~[wool:red][1][8]] wool:red
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]&[~[wool:red][1][8]] wool:red
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:red][1][8]] wool:red,wool:white
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:red][1][8]] wool:red,wool:white
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:red][1][8]] wool:orange
+
+$${WAIT(5)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]&[~[wool:orange][1][8]] wool:orange
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]&[~[wool:orange][1][8]] wool:orange
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:orange,wool:white|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:orange,wool:white|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:orange,wool:white|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:yellow
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:yellow
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:orange][1][8]] wool:yellow
+
+$${WAIT(5)}$$|
+//replace [wool:white]&[~[wool:yellow][1][8]] wool:yellow
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]]&[~[wool:yellow][1][8]] wool:yellow|
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]]&[~[wool:yellow][1][8]] wool:yellow|
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]]&[~[wool:yellow][1][8]] wool:yellow|
+$${WAIT(1)}$$|
+//replace [wool]&[![$$[PlaceholderWater]]]&[~[wool:yellow][1][8]] wool:yellow|
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:yellow][1][8]] wool:yellow,wool:white
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:yellow][1][8]] wool:yellow,wool:white
+$${WAIT(1)}$$|
+//replace [wool:white]&[~[wool:yellow][1][8]] wool:yellow,wool:white
+$${WAIT(1)}$$
+//replace [wool:white]&[~[wool:yellow][1][8]] wool:yellow,wool:white
+$${WAIT(1)}$$
+//replace [wool:red]&[~[$$[PlaceholderWater]][1][8]] 99%wool:red,1%wool:black|
+
+$${WAIT(1)}$$|
+//replace [wool] #biome[forest]
+
+$${WAIT(1)}$$
+//replace [wool:orange] #simplex[22][30%wool:purple,40%wool:green,30%wool:blue]|
+
+$${WAIT(1)}$$
+//gmask [air]&>[wool:green]
+$${WAIT(1)}$$
+//generate -o [95:13] round(abs(x)%(2+random()))+round(abs(z)%(2+random()))==0
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:13]&~[95:13][1][8] air
+
+$${WAIT(1)}$$
+//gmask [air]&>[wool:purple]
+$${WAIT(1)}$$
+//generate -o [95:14] round(abs(x)%(2+random()))+round(abs(z)%(2+random()))==0
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:14]&~[95:14][1][8] air
+
+$${WAIT(1)}$$
+//gmask [air]&>[wool:blue]
+$${WAIT(1)}$$
+//generate -o [95:15] round(abs(x)%(3+random()))+round(abs(z)%(3+random()))==0
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:15]&~[95:15][1][8] air
+
+$${WAIT(1)}$$
+//gmask [air]&>[wool:red]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(5+random()))+round(abs(z)%(5+random()))==0|
+$${WAIT(5)}$$|
+//gmask|
+$${WAIT(1)}$$|
+//replace [95:0]&~[95:0][1][8] air|
+
+$${WAIT(1)}$$
+//gmask [[air]&>[wool:black]]|
+$${WAIT(1)}$$
+//set 95:6|
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:6]&~[95:6][1][8] air|
+
+$${WAIT(1)}$$|
+//expand 15 n,w|
+
+$${WAIT(1)}$$|
+//replace #offset[4][0][4][95:13,95:14,95:15,95:0] 20|
+$${WAIT(1)}$$|
+/gmask [air]
+$${WAIT(1)}$$
+//replace 20 [#fullcopy[SpacerM1][false][false]]
+$${WAIT(1)}$$
+//gmask|
+$${WAIT(1)}$$
+//replace [wool:blue,wool:green] wool:orange|
+
+$${WAIT(1)}$$
+//gmask [air]&>[wool:red]|
+$${WAIT(1)}$$
+//generate -o [95:1] round(abs(x)%(3+random()))+round(abs(z)%(3+random()))==0|
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:1]&~[95:1][1][8] air|
+
+$${WAIT(1)}$$
+//gmask [air]&>[wool:orange]
+$${WAIT(1)}$$
+//generate -o [95:5] round(abs(x)%(5+random()))+round(abs(z)%(5+random()))==0|
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:5]&~[95:5][1][8] air|
+
+ 
+$${LOG(First Half Complete)}$$

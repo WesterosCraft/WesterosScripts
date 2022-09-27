@@ -1,0 +1,8 @@
+//replace <[blue] 4
+//replace blue&\|[gravel,dirt,grass][1][6]]  brown
+//replace #surface&|[brown][2][6]]&![blue]  20%brown,80%#existing
+//replace brown dirt,gravel
+
+
+
+//rep blue&#offset[0][0][1][air] 251:2

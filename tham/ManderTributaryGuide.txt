@@ -1,0 +1,36 @@
+$${LOG(Working with a poly selection to mark the floodplain)}$$
+//replace [2012,dirt,gravel,grass]&#yaxis white
+//replace >[white]&[31,2005,2006,2155] air
+//replace <[air]&[white] #biome[river]
+
+//expand 10 down
+//replace water white
+
+$${LOG(Draw the shape of the river bed)}$$
+//gmask white
+//sel convex
+//curve 2000:1 0-4
+
+$${LOG(Draw the shape alluvial banks and dry sidestreams)}$$
+//gmask white
+//sel convex
+//curve black 0-4
+
+$${LOG(place placeholder for soil under trees)}$$
+//replace <[2022,2026,17]&wool brown
+
+//gmask
+$${LOG(run the script 'River Upper Banks', with 'white' as the placeholder)}$$
+
+$${LOG(replace black with sand)}$$
+//replace |[2000:1][1][8]&[black] 2012:1
+//replace black 2149:4
+
+$${LOG(double up the weeds)}$$
+//replace #biome[river]&air&>[2059:2] #simplex[5][60%2059:2,40%air]
+//replace #biome[river]&air&>[2155:3] #simplex[6][40%2155:3,60%air]
+//replace #biome[river]&air&>[2155:0] #simplex[6][40%2155:0,60%air]
+
+2059:2
+2155:3
+2155:0

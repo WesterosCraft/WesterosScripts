@@ -1,0 +1,9 @@
+//gmask grass|
+$${WAIT(1)}$$|
+//curve 30%dirt,70%gravel 1|
+$${WAIT(1)}$$|
+/gmask dirt,gravel|
+$${WAIT(1)}$$|
+//curve 30%dirt,70%grass 0|
+$${WAIT(1)}$$|
+//gmask|

@@ -1,0 +1,13 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+//replace [0]&[>[$$[placeholder]]] 2005:1,2006:5|
+$${WAIT(1)}$$|
+/storm|
+$${WAIT(1)}$$|
+//replace $$[placeholder] farmland|
+$${WAIT(1)}$$|
+/sun|
+$${WAIT(2)}$$|
+$${LOG(Script Complete)}$$|

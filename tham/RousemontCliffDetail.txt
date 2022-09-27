@@ -1,0 +1,41 @@
+//replace air&>[2029:0] red
+$${WAIT(1)}$$|
+//replace red&\|[air][1][4] black
+$${WAIT(1)}$$|
+//replace red #simplex[10][green,gray]
+$${WAIT(1)}$$|
+//replace black&\|[2029][1][2] #simplex[6][60%red,20%purple,20%orange]
+$${WAIT(1)}$$|
+//replace <[2029]&\|[2029][1][2]&air yellow
+$${WAIT(1)}$$|
+//replace <[yellow]&\|[2029][1][2]&air yellow
+$${WAIT(1)}$$|
+//replace green,black #simplex[3][green,air]
+$${WAIT(1)}$$|
+
+//replace >purple 70%air,30%2205:2
+$${WAIT(1)}$$|
+//replace red 2310:0
+$${WAIT(1)}$$|
+//replace purple,yellow 2314:0
+$${WAIT(1)}$$|
+//replace orange air
+$${WAIT(1)}$$|
+
+//replace 2029&~[2029][4][5]&#yaxis 90%purple,10%2029:0
+$${WAIT(1)}$$|
+//replace 2029&~[2029][4][5]&#yaxis 70%purple,30%2029:0
+$${WAIT(1)}$$|
+//replace 2029&~[2029][4][5]&#yaxis 50%purple,50%2029:0
+$${WAIT(1)}$$|
+//replace 2029&~[2029][4][5]&#yaxis 10%purple,90%2029:0
+$${WAIT(1)}$$|
+//replace purple 2029:2
+$${WAIT(1)}$$|
+
+//replace #solid&<gray gray
+$${WAIT(1)}$$|
+//replace gray&<[air] air
+$${WAIT(1)}$$|
+//replace green 2205:1,18:3
+$${WAIT(1)}$$|

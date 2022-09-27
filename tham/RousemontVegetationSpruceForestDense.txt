@@ -1,0 +1,27 @@
+//replace yellow #simplex[7][70%black,15%cyan]
+$${WAIT(1)}$$
+//replace brown 2034:1
+$${WAIT(1)}$$
+
+//replace black #simplex[8][70%black,15%purple,15%green]	
+$${WAIT(1)}$$
+//replace [[air]&>[black]] 95%air,5%2205:2
+$${WAIT(1)}$$
+//replace [[air]&>[black]] #simplex[8][60%air,40%brown]
+$${WAIT(1)}$$
+//replace <[brown] 2034:1
+$${WAIT(1)}$$
+//replace cyan #simplex[6][2034:0,2034:1]
+$${WAIT(1)}$$
+//replace [[air]&>[purple,green]] #simplex[6][air,2155:1,2205:1]
+
+$${WAIT(1)}$$
+//replace [[brown,air]&>[2034:1]] 2066:12
+$${WAIT(1)}$$
+//replace black 2033:4
+$${WAIT(1)}$$
+//replace [[air]&>[purple]] 31:2
+$${WAIT(1)}$$
+//replace purple dirt
+$${WAIT(1)}$$
+//replace green gravel

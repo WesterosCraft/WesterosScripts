@@ -1,0 +1,8 @@
+//replace 95:3 2000:1
+//replace |[2000:1][1][6]&<[air]&[grass,dirt,gravel] red
+//replace |[red][1][6]&<[air]&[grass,dirt,gravel] red
+//replace |[red][1][6]&<[air]&[grass,dirt,gravel] red
+//replace |[red][1][6]&<[air]&[grass,dirt,gravel] red
+//replace |[red][1][6]&<[air]&[grass,dirt,gravel] red
+//replace red,2000:1 #biome[river]
+//replace red grass

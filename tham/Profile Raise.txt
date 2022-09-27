@@ -1,0 +1,168 @@
+$${LOG(Before you start using this script)}$$
+$${LOG(make sure that you have selected ONLY the starting y layer i.e. the ground level)}$$
+$${LOG(This script provides three general profiles:)}$$
+$${LOG(A-shaped, A: equal step size all the way down, you will be prompted for the step size)}$$
+$${LOG(Steep-Then-Flat, S: steps start at one but get one block wider with each level)}$$
+$${LOG(Flat-Then-Steep, F: steps start as wide as the maximum height but get one block thinner with each level)}$$
+$${LOG(Custom, C: you will be prompted at each step for the desired step size)}$$
+
+$${PROMPT(&type,$$[type],shape : e.g. 'S' 'F' 'A' or 'C')}$$
+$${PROMPT(#maxheight,$$[maxheight],How high would you like your hill or mountain to be at most?)}$$
+$${PROMPT(&area,$$[area],Provide the block name or ID of your area placeholder.)}$$
+
+$${#maxheightminus1 = %#maxheight% - 1}$$
+$${#maxheightminus2 = %#maxheight% - 2}$$
+$${#id = 1}$$
+
+$${ECHO(//expand %#maxheight% up)}$$
+$${WAIT(2)}$$
+
+$${LOG(Prepping Base)}$$
+$${ECHO(//replace >%&area% 95:0)}$$
+$${DO(%#maxheight%)}$$
+	$${WAIT(1)}$$
+	$${ECHO(//replace >95:0 95:0)}$$
+$${LOOP}$$
+$${WAIT(3)}$$
+$${ECHO(//contract %#maxheightminus1% down)}$$
+$${WAIT(3)}$$
+$${ECHO(//contract 1 u)}$$
+$${WAIT(1)}$$
+$${ECHO(//replace >[%&area%]&[95:0]&\|[![95:0]][1][4] 95:%#id%)}$$
+
+$${IF(%&type% == "S")
+	LOG(Initiating Steep-Then-Flat profile)
+	#width = 1
+	DO(%#maxheightminus2%)
+		LOG(Adding Layer)
+		IF(%#width% == 1)
+			LOG(Skipping first layer because it's already 1 block thick)
+		ELSE
+			DO(%#width%)
+				LOG(Extending Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ENDIF;
+		WAIT(1)
+		ECHO(//shift 1 u)
+		WAIT(1)
+		ECHO(//replace [95:0]&>[95:%#id%] red)
+		INC(#width)
+		INC(#id)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ELSEIF(%&type% == "F")
+	LOG(Initiating Flat-Then-Steep profile)
+	#width = #maxheightminus2
+	DO(%#maxheightminus2%)
+		LOG(Adding Layer)
+		DO(%#width%)
+			LOG(Extending Layer)
+			WAIT(1)
+			ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+		LOOP
+		WAIT(1)
+		ECHO(//shift 1 u)
+		WAIT(1)
+		ECHO(//replace [95:0]&>[95:%#id%] red)
+		DEC(#width)
+		INC(#id)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ELSEIF(%&type% == "A")
+	LOG(Initiating A-shaped profile)
+	PROMPT(#width,$$[width],How wide should each step be?)
+	#iteration = 1
+	DO(%#maxheightminus2%)
+		LOG(Adding Layer)
+		IF(%#width% == 1)
+			LOG(Skipping first layer because it's already 1 block thick)
+		ELSEIF(%#iteration% == 1)
+			DO(%#width% - 1)
+				LOG(Extending First Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ELSE
+			DO(%#width%)
+				LOG(Extending Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ENDIF;
+		WAIT(1)
+		ECHO(//shift 1 u)
+		WAIT(1)
+		ECHO(//replace [95:0]&>[95:%#id%] red)
+		INC(#id)
+		INC(#iteration)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ELSEIF(%&type% == "C")
+	LOG(Initiating custom profile)
+	#iteration = 1
+	DO(%#maxheightminus2%)
+		LOG(Adding Layer)
+		PROMPT(#width,$$[width],How wide should this step be?)
+		WAIT(1)
+		IF(%#iteration% == 1)
+			DO(%#width% - 1)
+				LOG(Extending First Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ELSE
+			DO(%#width%)
+				LOG(Extending Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ENDIF;
+		WAIT(1)
+		ECHO(//shift 1 u)
+		WAIT(1)
+		ECHO(//replace [95:0]&>[95:%#id%] red)
+		INC(#id)
+		INC(#iteration)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ENDIF;}$$
+$${ECHO(//contract %#maxheightminus1% down)}$$
+
+
+
+
+
+
+
+
+

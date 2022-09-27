@@ -1,0 +1,71 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[PlaceholderLand]&<[air] white
+$${WAIT(1)}$$|
+//replace [wool] #biome[forest]
+
+$${LOG(Generating Super-Dense Spread)}$$
+$${WAIT(1)}$$
+//gmask [air]&>[white]
+$${WAIT(1)}$$
+//generate -o [95:0] (round(abs(x)%(2+random()))-round(abs(z)%(2+random())))==0
+$${WAIT(2)}$$|
+//gmask [95:0]
+$${WAIT(1)}$$
+//generate -o [95:1] (round(abs(x)%(2))-round(abs(z)%(2)))==0
+$${WAIT(2)}$$|
+
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:1] air
+
+$${WAIT(1)}$$|
+//expand 15 n,w,e,s|
+$${WAIT(1)}$$|
+
+$${LOG(Thinning Out Super-Dense Spread)}$$
+$${WAIT(1)}$$|
+//replace #offset[2][0][2][95:0] 20|
+$${WAIT(1)}$$|
+/gmask [air,95]
+$${WAIT(1)}$$|
+//replace 20 [#fullcopy[SpacerT1]
+$${WAIT(1)}$$|
+/gmask
+$${WAIT(1)}$$|
+//replace 20,168 air
+$${WAIT(1)}$$|
+//replace 2158 95:0
+
+$${LOG(Placing Offset Placeholders)}$$
+$${WAIT(1)}$$|
+//replace [95] #simplex[8][95:0,95:1]
+$${WAIT(1)}$$|
+//replace <[95] brown|
+$${WAIT(1)}$$|
+//replace #offset[3][0][3][95:1] 20|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:0] 21|
+
+$${LOG(Placing Tree Schematics)}$$
+$${WAIT(1)}$$|
+//replace 20 10%[#fullcopy[SentinelS1][false][false]],10%[#fullcopy[SentinelS2][false][false]],10%[#fullcopy[SentinelS3][false][false]],10%[#fullcopy[SentinelS4][false][false]],10%[#fullcopy[SentinelS5][false][false]]|
+$${WAIT(1)}$$|
+//replace 21 10%[#fullcopy[EmilyPine1][false][false]],10%[#fullcopy[EmilyPine2][false][false]],10%[#fullcopy[EmilyPine3][false][false]],10%[#fullcopy[EmilyPine4][false][false]],10%[#fullcopy[EmilyPine5][false][false]]|
+
+$${LOG(Cleaning Up Placeholders and Markers)}$$
+$${WAIT(1)}$$|
+//replace [[20,21]&>[wool]] air
+$${WAIT(1)}$$|
+//replace [[20,21]&~[wool][1][8]] white
+$${WAIT(1)}$$|
+//replace [95:0,95:1,20,21] air
+
+$${LOG(Fill Holes In Terrain)}$$
+$${WAIT(1)}$$|
+//replace [white] yellow
+$${WAIT(1)}$$|
+//replace [[air]&~[yellow][3][8]] yellow
+
+$${LOG(Completed)}$$

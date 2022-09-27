@@ -1,0 +1,144 @@
+
+$${WAIT(1)}$$
+//replace [[wool:yellow]&[<168]] wool:pink|
+$${WAIT(1)}$$
+//replace [[wool:orange]&[<168]] wool:purple|
+
+$${WAIT(1)}$$
+//replace [168,20] air|
+$${WAIT(3)}$$
+//replace <[95:0,95:1,95:13,95:14,95:15] wool:brown|
+
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:13] 22|
+$${WAIT(1)}$$|
+//replace 22 10%[#fullcopy[AlderM5][false][false]],10%[#fullcopy[AlderM3][false][false]],10%[#fullcopy[AlderM4][false][false]],10%[#fullcopy[AlderM7][false][false]]|
+
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:14] 21|
+$${WAIT(3)}$$|
+//replace 21 10%[#fullcopy[BirchM1][false][false]],10%[#fullcopy[BirchM2][false][false]],10%[#fullcopy[BirchM5][false][false]],10%[#fullcopy[BirchM7][false][false]]|
+
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:0] 20|
+$${WAIT(1)}$$|
+//replace 20 10%[#fullcopy[OakM1][false][false]],10%[#fullcopy[OakM2][false][false]],10%[#fullcopy[OakM3][false][false]],10%[#fullcopy[OakM6][false][false]],10%[#fullcopy[OakM5][false][false]],10%[#fullcopy[OakM4][false][false]]|
+
+$${WAIT(1)}$$|
+//replace #offset[3][0][3][95:15] 23|
+$${WAIT(3)}$$|
+//replace 23 10%[#fullcopy[AshS1][false][false]],10%[#fullcopy[AshS2][false][false]],10%[#fullcopy[AshS3][false][false]],10%[#fullcopy[AshS6][false][false]],10%[#fullcopy[AshS5][false][false]],10%[#fullcopy[AshS7][false][false]]|
+
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:5] 24|
+$${WAIT(1)}$$|
+//replace 24 10%[#fullcopy[LJungleM2][false][false]],10%[#fullcopy[LJungleM4][false][false]],10%[#fullcopy[LJungleM5][false][false]],10%[#fullcopy[LJungleM6][false][false]],10%[#fullcopy[LJungleM7][false][false]],10%[#fullcopy[LJungleM8][false][false]]|
+
+$${WAIT(1)}$$|
+//replace #offset[3][0][3][95:1] 25|
+$${WAIT(1)}$$|
+//replace 25 10%[#fullcopy[WillowSCopp1][false][false]],10%[#fullcopy[WillowSCopp2][false][false]],10%[#fullcopy[WillowSCopp3][false][false]],10%[#fullcopy[WillowSCopp4][false][false]],10%[#fullcopy[WillowSCopp5][false][false]]|
+
+$${WAIT(1)}$$|
+//replace #offset[2][0][2][95:6] 26|
+$${WAIT(3)}$$|
+//replace 26 10%[#fullcopy[ThamFallenJungleS3][false][false]],10%[#fullcopy[ThamFallenJungleS1][false][false]],10%[#fullcopy[ThamFallenJungleS1][false][false]],10%[#fullcopy[ThamFallenSpruceS1][false][false]]|
+
+$${WAIT(1)}$$|
+//replace [[20,21,22,23,24,25,26]&>[wool]] air
+$${WAIT(1)}$$|
+//replace [[20,21,22,23,24,25,26]&~[wool][1][8]] wool:white
+$${WAIT(1)}$$|
+//replace [95:13,95:14,95:15,95:0,95:1,95:5,20,21,22,23,24,25,26] air
+
+$${LOG(Generate Birch Bushes)}$$
+$${WAIT(1)}$$|
+//replace [[air]&>[red]] #simplex[8][30%95:0,70%air]
+$${WAIT(1)}$$|
+//replace ~[![95:0]][0][3]]&[95:0] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&>95:1]] 80%95:0,20%air
+$${WAIT(1)}$$|
+//replace [95:0,95:1] 18:2
+
+$${LOG(Generate Raspberry Bushes)}$$
+$${WAIT(1)}$$|
+//replace [[air]&>[orange]] #simplex[8][20%95:0,80%air]
+$${WAIT(1)}$$|
+//replace ~[![95:0]][0][3]]&[95:0] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&>95:1]] 80%95:0,20%air
+$${WAIT(1)}$$|
+//replace [95:0,95:1] 2017:5,18:3
+
+$${WAIT(1)}$$|
+//replace [[wool]&~[wool:brown][1][8]] wool:brown|
+$${WAIT(1)}$$|
+//replace [[wool]&~[wool:brown][1][8]] wool:brown|
+$${WAIT(1)}$$|
+//replace [[wool]&~[wool:brown][1][8]] wool:brown|
+
+$${WAIT(4)}$$|
+//gmask >[wool:red]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[7][30%2155:0,30%2155:3,30%2059:2,2%2006:0,1%2005:4,5%2059:13,2%2059:1]|
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace >[2155:2] 90%2155:2,10%air
+$${WAIT(1)}$$|
+//replace >[2205:3] 90%2205:3,10%air
+
+$${WAIT(1)}$$| 
+//gmask >[wool:orange]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[5][30%2059:2,30%2155:2,30%2205:3,2%2006:0,1%2005:4,5%2059:13,2%2059:1]|
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace >[2155:0] 90%2155:0,10%air
+$${WAIT(1)}$$|
+//replace >[2155:3] 90%2155:3,10%air
+$${WAIT(1)}$$|
+//replace >[2059:2] 90%2059:2,10%air
+
+$${WAIT(3)}$$| 
+//gmask >[wool:yellow]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[5][40%2205:1,20%31:2,5%2059:2,5%2060:2,2%2005:10,2%2060:1,15%2005:11]|
+
+$${WAIT(1)}$$| 
+//gmask >[wool:white]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[5][70%31:2,15%2059:2,5%2005:11,5%2060:2,2%2005:10,2%2060:1,]|
+
+$${WAIT(1)}$$| 
+//gmask >[wool:pink,wool:purple]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[15][30%2060:2,70%air]|
+//replace [air] #simplex[9][8%2060:1,90%air]|
+
+$${WAIT(3)}$$|
+//gmask
+ $${WAIT(1)}$$|
+//replace wool:brown 70%dirt,30%2033:3
+$${WAIT(1)}$$|
+//replace wool:red 90%2034:1,10%2034:0
+$${WAIT(1)}$$|
+//replace wool:orange 50%dirt,10%gravel,30%grass,10%2034:0
+$${WAIT(1)}$$|
+//replace wool:purple 30%gravel,5%grass,65%dirt,20%2033:3
+$${WAIT(1)}$$|
+//replace wool:pink 20%gravel,5%grass,70%dirt,5%2033:3
+$${WAIT(1)}$$|
+//replace wool:yellow 10%dirt,5%gravel,70%grass
+$${WAIT(1)}$$|
+//replace wool:white 7%dirt,3%gravel,90%grass
+$${WAIT(1)}$$|
+//replace 95:4 2017:5
+$${WAIT(1)}$$|
+//replace 95:2 18:2
+$${WAIT(1)}$$|
+//replace [[air]&>[dirt]] 31:1
+
+$${LOG(Second Half Complete)}$$

@@ -1,0 +1,116 @@
+$${LOG(Starting Operations)}$$
+//expand 5 u,w,n|
+$${WAIT(1)}$$|
+//replace #surface&$$[PlaceholderLand] white
+$${WAIT(1)}$$|
+//replace [wool] #biome[forest]
+
+$${LOG(Determining Tree Growth Patterns)}$$
+$${WAIT(1)}$$
+//replace white #simplex[25][30%red,70%white]
+
+$${LOG(Generate Spacer Positions for Trees)}$$
+$${WAIT(1)}$$
+//gmask [air]&>[red]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(7+random()))-round(abs(z)%(7+random()))==0
+$${WAIT(1)}$$
+//gmask [air]&>[white]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(10+random()))-round(abs(z)%(10+random()))==0
+$${WAIT(1)}$$
+//gmask
+$${WAIT(1)}$$
+//replace [[95]&~[95][1][8]] air
+
+$${LOG(Offset and Place Spacers)}$$
+$${WAIT(2)}$$|
+/gmask [air,95]
+
+$${LOG(Above Red)}$$
+$${WAIT(1)}$$|
+//replace #offset[2][0][2][[95:0]&>[red]] 20|
+$${WAIT(1)}$$|
+//replace 20 [#fullcopy[SpacerT1]]
+$${WAIT(1)}$$|
+
+$${LOG(Above Red)}$$
+$${WAIT(1)}$$|
+//replace #offset[3][0][3][[95:0]&>[white]] 21|
+$${WAIT(1)}$$|
+//replace 21 [#fullcopy[SpacerS1]]
+$${WAIT(1)}$$|
+
+$${LOG(Clean-up)}$$
+//replace [[air]&\|[168][2][8]]] 168
+$${WAIT(1)}$$|
+/gmask
+$${WAIT(1)}$$|
+//replace 95,20,21 air
+$${WAIT(1)}$$|
+//replace 2158:5 95:0
+$${WAIT(1)}$$|
+//replace [[air]&\|[168][2][8]]] 168
+$${WAIT(1)}$$|
+
+$${LOG(Establish Tree Grouping)}$$
+//replace 95&>[red] 95:1
+
+$${LOG(Define Areas under Canopy)}$$
+$${WAIT(1)}$$
+//replace [[white,red]&[<168]] yellow|
+$${WAIT(1)}$$
+//replace [168,20] air|
+$${WAIT(1)}$$
+//replace <[95] wool:brown|
+$${WAIT(1)}$$
+//replace red white
+
+$${LOG(Establish Tree Grouping on White)}$$
+$${WAIT(1)}$$|
+//replace [95:0] #simplex[8][95:2,95:3,95:4]
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:2] 20|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:3] 21|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:4] 22|
+
+$${LOG(Establish Tree Grouping on what was formerly Red)}$$
+$${WAIT(1)}$$|
+//replace [95:1] #simplex[8][95:5,95:6,95:7]
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:5] 23|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:6] 24|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:7] 25|
+
+$${LOG(Plant Trees on White)}$$
+$${WAIT(1)}$$|
+//replace 20 10%[#fullcopy[ForestOak1][false][false]],10%[#fullcopy[ForestBirch2][false][false]],10%[#fullcopy[ForestOak6][false][false]],10%[#fullcopy[ForestOak4][false][false]],10%[#fullcopy[ForestOak7][false][false]]
+$${WAIT(1)}$$|
+//replace 21 10%[#fullcopy[ForestOak8][false][false]],10%[#fullcopy[ForestOak9][false][false]],10%[#fullcopy[ForestOak10][false][false]],10%[#fullcopy[ForestOak11][false][false]],10%[#fullcopy[ForestOak12][false][false]]|
+$${WAIT(1)}$$|
+//replace 22 10%[#fullcopy[ForestOak13][false][false]],10%[#fullcopy[ForestOak14][false][false]],10%[#fullcopy[ForestOak15][false][false]],10%[#fullcopy[ForestOak16][false][false]],10%[#fullcopy[ForestOak3][false][false]]||
+
+$${LOG(Plant Trees on what was formerly red)}$$
+$${WAIT(1)}$$|
+//replace 23 10%[#fullcopy[ForestBirch1][false][false]],10%[#fullcopy[ForestOak5][false][false]],10%[#fullcopy[ForestBirch6][false][false]],10%[#fullcopy[ForestBirch4][false][false]],10%[#fullcopy[ForestBirchML8][false][false]]
+$${WAIT(1)}$$|
+//replace 24 10%[#fullcopy[ForestBirch8][false][false]],10%[#fullcopy[ForestBirch9][false][false]],10%[#fullcopy[ForestBirch10][false][false]],10%[#fullcopy[ForestBirch11][false][false]],10%[#fullcopy[ForestBirch12][false][false]]|
+$${WAIT(1)}$$|
+//replace 25 10%[#fullcopy[ForestBirch13][false][false]],10%[#fullcopy[ForestBirchML4][false][false]],10%[#fullcopy[ForestBirch15][false][false]],10%[#fullcopy[ForestBirch16][false][false]],10%[#fullcopy[ForestBirch1][false][false]]||
+
+$${LOG(Clean-up)}$$
+$${WAIT(1)}$$|
+//replace [[20,21,23,24,25]&>[wool]] air
+$${WAIT(1)}$$|
+//replace [[20,21,23,24,25]&~[wool][1][8]] white
+$${WAIT(1)}$$|
+//replace [95,20,21,22,23,24,25] air
+
+$${WAIT(1)}$$|
+//replace [[air]&~[yellow][3][8]] yellow
+$${WAIT(1)}$$|
+//replace [[air]&~[white][2][8]] white

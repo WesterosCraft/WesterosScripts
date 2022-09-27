@@ -1,0 +1,17 @@
+//gmask
+//replace 2012:2 dirt,gravel,grass
+$${WAIT(2)}$$
+//replace grass,dirt,gravel 90%grass,10%dirt,10%gravel
+$${WAIT(2)}$$
+//replace 42 2071:3
+$${WAIT(2)}$$
+//replace wool:red 25%2034:1,65%2034:0,10%gravel
+//replace wool:orange 80%2034:0,10%2029:3
+//replace 35:4 60%2034:0,30%gravel,10%dirt
+//replace wool:green 40%grass,40%dirt,20%gravel
+$${WAIT(6)}$$
+//replace sand 18:2
+//gmask >grass
+//replace 0 90%31:2,10%31:1
+
+

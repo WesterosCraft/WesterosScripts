@@ -1,0 +1,11 @@
+//expand 20 up
+//expand 10 down
+//replace water gold
+//replace gravel ironore
+//move 1 up
+//replace ironore gravel
+//replace gold water
+//contract 31 down
+//set dirt
+
+

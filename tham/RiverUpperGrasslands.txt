@@ -1,0 +1,170 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[PlaceholderLand] wool:white
+
+$${WAIT(1)}$$|
+//replace [wool:white]&~[95:3][1][8] wool:red|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:red][1][8] wool:red|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:red][1][8] wool:red|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:red][1][8] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:orange][1][8] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:orange][1][8] wool:orange,wool:white|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:orange][1][8] wool:purple|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] wool:purple|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] wool:purple|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] wool:purple|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] wool:purple|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] wool:purple|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] wool:purple|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] 10%wool:purple,90%wool:white|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] 10%wool:purple,90%wool:white|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:purple][1][8] 10%wool:purple,90%wool:white|
+$${WAIT(1)}$$|
+//replace [wool:red] #simplex[4][60%wool:red,40%wool:yellow]|
+$${WAIT(1)}$$|
+//replace [wool:red]&~[wool:yellow][1][8] wool:green|
+$${WAIT(1)}$$|
+//replace [wool:red]&~[wool:green][1][8] wool:green|
+
+$${WAIT(1)}$$|
+//replace [wool:red,wool:yellow,wool:purple,wool:orange,wool:green] #biome[forest]
+
+$${WAIT(1)}$$|
+//gmask >[wool:yellow]
+//generate -o [95:13] round(abs(x)%(1+random()))+round(abs(z)%(1+random()))==0
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:13]&~[95:13][1][8] air
+
+$${WAIT(1)}$$|
+//gmask >[wool:green]
+//generate -o [95:14] round(abs(x)%(1+random()))+round(abs(z)%(1+random()))==0
+$${WAIT(5)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:14]&~[95:14][1][8] air
+
+$${WAIT(1)}$$|
+//replace <[95:13,95:14] wool:brown
+//replace [wool:yellow,wool:green] wool:red|
+$${WAIT(1)}$$|
+//replace [wool]&~[wool:brown][1][8] wool:brown|
+$${WAIT(1)}$$|
+//replace [wool]&~[wool:brown][1][8] wool:brown,wool:red|
+$${WAIT(1)}$$|
+//replace [wool]&~[wool:brown][1][8] wool:brown|
+
+$${WAIT(1)}$$|
+//expand 15 n|
+//expand 15 w|
+$${WAIT(1)}$$|
+//replace #offset[3][0][3][95:13] 41
+$${WAIT(1)}$$|
+//replace 41 70%155:0,30%155:1
+$${WAIT(1)}$$|
+//replace 155:0 [20%[#fullcopy[AlderS5][false][false]],20%[#fullcopy[AlderS6][false][false]],20%[#fullcopy[AlderS7][false][false]],20%[#fullcopy[AlderS10][false][false]],10%[#fullcopy[AlderS1][false][false]]]
+$${WAIT(1)}$$|
+//replace 155:1 [5%[#fullcopy[LJungleS1][false][false]],5%[#fullcopy[ThamFallenJungleS1][false][false]],5%[#fullcopy[LJungleS8][false][false]],5%[#fullcopy[ThamFallenJungleS3][false][false]],5%[#fullcopy[ThamFallenSpruceS4][false][false]],5%[#fullcopy[ThamFallenSpruceS1][false][false]]]|
+
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:14] 22|
+$${WAIT(1)}$$|
+//replace 22 10%[#fullcopy[AlderM5][false][false]],10%[#fullcopy[AlderM3][false][false]],10%[#fullcopy[AlderM4][false][false]],10%[#fullcopy[AlderM7][false][false]]
+$${WAIT(1)}$$|
+//replace [155,22,95:14,95:13] air|
+
+$${WAIT(1)}$$|
+//gmask >[wool:orange]
+//replace [air] #simplex[2][90%air,10%95:15]|
+$${WAIT(1)}$$|
+//replace [air]&~[95:15][1][8] 30%95:15,70%air|
+$${WAIT(1)}$$|
+//replace [air]&~[95:15][1][8] 30%95:15,70%air|
+$${WAIT(1)}$$|
+
+$${WAIT(1)}$$|
+//gmask >[wool:purple]
+//replace [air] [99.5%air,0.5%95:15]|
+$${WAIT(1)}$$|
+//replace [air]&~[95:15][1][8] 30%95:15,70%air|
+$${WAIT(1)}$$|
+//replace [air]&~[95:15][1][8] 30%95:15,70%air|
+
+$${WAIT(1)}$$|
+//gmask >[wool:orange,wool:red]
+$${WAIT(1)}$$|
+//replace [air] [99%air,1%95:0]|
+$${WAIT(1)}$$|
+//replace [air]&~[95:0][1][8] [20%air,80%95:0]|
+$${WAIT(1)}$$|
+//replace [air]&~[95:0][1][8] [20%air,80%95:0]|
+$${WAIT(1)}$$|
+//gmask >[95:0]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[5][50%air,50%95:0]|
+
+$${WAIT(1)}$$| 
+//gmask >[wool:red]
+$${WAIT(1)}$$| 
+//replace [air] [2%2060:2,2%2005:10,16%,2005:11,80%2155:0]|
+$${WAIT(1)}$$| 
+//replace [air]&~[2155:0][1][8] [90%2155:0,10%air]|
+$${WAIT(1)}$$| 
+//gmask
+$${WAIT(1)}$$| 
+//replace >[2155:0] [90%2155:0,10%air]|
+
+
+$${WAIT(1)}$$| 
+//gmask >[wool:orange]
+$${WAIT(1)}$$| 
+//replace [air]&~[2155:0][1][8] [90%2155:0,10%air]|
+$${WAIT(1)}$$| 
+//replace [air]&~[2155:0][1][8] [90%2155:0,10%air]|
+$${WAIT(1)}$$| 
+//replace [air] [35%31:2,5%,2005:11,56%2059:2,4%2060:2]|
+
+$${WAIT(1)}$$| 
+//gmask >[wool:purple]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[5][70%2059:2,15%31:2,5%2006:10,5%2005:11]|
+
+$${WAIT(1)}$$| 
+//gmask >[wool:white]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[5][70%31:2,15%2059:2,5%2006:10,5%2005:11]|
+
+$${WAIT(1)}$$|
+//gmask
+ $${WAIT(1)}$$|
+//replace wool:brown 70%dirt,30%2033:3
+$${WAIT(1)}$$|
+//replace wool:red 90%2034:1,10%2034:0
+$${WAIT(1)}$$|
+//replace wool:orange 50%dirt,10%gravel,30%grass,10%2034:0
+$${WAIT(1)}$$|
+//replace wool:purple 10%dirt,5%gravel,70%grass
+$${WAIT(1)}$$|
+//replace wool:white 7%dirt,3%gravel,90%grass
+$${WAIT(1)}$$|
+//replace 95:15 18:2
+$${WAIT(1)}$$|
+//replace 95:0 2077:5
+$${WAIT(1)}$$|
+//replace [air]&>[dirt] 31:1

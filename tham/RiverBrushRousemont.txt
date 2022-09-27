@@ -1,0 +1,38 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+//replace $$[PlaceholderLand] 42|
+$${WAIT(1)}$$|
+//rep [air]&>[42] #simplex[5][45%orange,5%red,15%green,10%yellow,25%pink]|
+
+$${LOG(Generate Jungle Bushes)}$$|
+$${WAIT(1)}$$|
+//replace [orange]&[~[![orange]][0][3]] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&[>95:1]] 80%95:0,20%air|
+$${WAIT(1)}$$|
+//replace [orange,95] 18:3|
+
+$${LOG(Generate A)}$$|
+$${WAIT(1)}$$|
+//replace [green]&[~[![green]][0][3]] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&[>95:1]] 80%95:0,20%air|
+$${WAIT(1)}$$|
+//replace [green,95] 2205:1|
+
+$${LOG(Generate B)}$$|
+$${WAIT(1)}$$|
+//replace [pink]&[~[![pink]][0][3]] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&[>95:1]] 80%95:0,20%air|
+$${WAIT(1)}$$|
+//replace [pink,95] 2155:1|
+
+$${LOG(Final Replacement)}$$|
+$${WAIT(1)}$$|
+//rep red 31:1,31:2|
+$${WAIT(1)}$$|
+//rep yellow 2205:3|
+$${WAIT(2)}$$|
+//rep 42 [75%grass,20%dirt,5%gravel]|

@@ -1,0 +1,14 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+//gmask <0|
+$${WAIT(1)}$$|
+//replace $$[placeholder] 88|
+$${WAIT(1)}$$|
+//gmask >88|
+$${WAIT(1)}$$|
+//replace 0 115:7|
+$${WAIT(2)}$$|
+$${LOG(Script Complete)}$$|
+

@@ -1,0 +1,103 @@
+$${LOG(This script generates treeplacement and places a selection of specifically picked schematics for the Whitegrove forests)}$$
+$${LOG(After running the script the ground will be covered in yellow and white wool:)}$$
+$${LOG(Yellow indicating areas of the ground that are underneath the canopy)}$$
+$${LOG(White indicating areas of the ground that have only the sky above them)}$$
+
+
+$${LOG(First we replace the placeholder with white wool to have a clean basis to work from)}$$
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace #surface&$$[PlaceholderLand] white
+$${WAIT(1)}$$|
+//replace [wool] #biome[forest]
+
+$${LOG(Next we generate the tree placement)}$$
+$${WAIT(1)}$$
+//gmask [air]&>[white]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(2.5+random()))-round(abs(z)%(3.5+random()))==0
+$${WAIT(2)}$$|
+//gmask [95:0]
+$${WAIT(1)}$$
+//generate -o [95:1] (round(abs(x)%(2.5))-round(abs(z)%(2)))==0
+
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [95:1] air
+$${WAIT(1)}$$|
+//replace [[95]&~[95][1][8]] air
+$${WAIT(1)}$$|
+//replace 95 20%air,80%95
+
+$${LOG(Next we cull trees that are placed too close to each other. We use a spacer schematic to do this.)}$$
+$${WAIT(1)}$$|
+//expand 15 n,w,e,s|
+$${WAIT(1)}$$|
+$${LOG(Since the origin of each schematic is in it's North-Western corner after we've created them with Tham's SchemGenerator, we first have to offset the block we want to ultimately place the schematic on. So Target block => Offset => Schem places actually on the target block. The spacer is tiny so here we use an offset of 2!)}$$
+//replace #offset[2][0][2][95:0] 251:0|
+$${WAIT(1)}$$|
+//replace 95 air
+
+$${LOG(We place the spacer on those blocks we later replace with trees, this allows us to discern between ground that's likely underneath a canopy and ground that's under the open sky)}$$
+$${LOG(Masking 251:0 also means that this purges clusters of trees that stand too close i.e. within the diameter of a spacer)}$$
+$${WAIT(1)}$$|
+/gmask [air,251:0]
+$${WAIT(1)}$$
+//replace 251:0 [#fullcopy[SpacerT1][false][false]]
+$${WAIT(1)}$$
+/gmask
+
+$${LOG(Ground under the canopy is marked with yellow wool, the ground right under the stem of each tree is marked with brown wool)}$$
+$${WAIT(1)}$$
+//replace [[white]&[<168]] yellow|
+$${WAIT(1)}$$
+//replace [[white]&[>168]] yellow|
+$${WAIT(1)}$$
+//replace [2158:5] 95:0|
+$${WAIT(1)}$$
+//replace [168,251:0] air|
+$${WAIT(1)}$$
+//replace <[95:0] brown|
+
+$${LOG(Now we use simplex to determine which trees cluster together)}$$
+$${WAIT(1)}$$|
+//replace [95] #simplex[8][95:0,95:1,95:2,95:3,95:4,95:5]
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:0] 251:0|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:1] 251:1|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:2] 251:2|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:3] 251:3|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:4] 251:4|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:5] 251:5|
+
+$${WAIT(1)}$$|
+//replace 251:0 10%[#fullcopy[ThamFAlderM1][false][false]],10%[#fullcopy[ThamFAlderM2][false][false]],10%[#fullcopy[ThamFAlderM3][false][false]],10%[#fullcopy[ThamFAlderM4][false][false]],10%[#fullcopy[ThamFAlderM5][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:1 10%[#fullcopy[ThamFAlderM6][false][false]],10%[#fullcopy[ThamFAlderM8][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:2 10%[#fullcopy[ThamAltBirchL1][false][false]],10%[#fullcopy[ThamAltBirchL2][false][false]],10%[#fullcopy[ThamAltBirchL3][false][false]],10%[#fullcopy[ThamAltBirchL4][false][false]],10%[#fullcopy[ThamAltBirchL5][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:3 10%[#fullcopy[ThamAltBirchL6][false][false]],10%[#fullcopy[ThamAltBirchL8][false][false]],10%[#fullcopy[ThamAltBirchL9][false][false]],10%[#fullcopy[ThamAltBirchL10][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:4 10%[#fullcopy[ThamFBirchM1][false][false]],10%[#fullcopy[ThamFBirchM2][false][false]],10%[#fullcopy[ThamFBirchM3][false][false]],10%[#fullcopy[ThamFBirchM4][false][false]],10%[#fullcopy[ThamFBirchM5][false][false]]|
+$${WAIT(1)}$$|
+//replace 251:5 10%[#fullcopy[ThamFBirchM6][false][false]],10%[#fullcopy[ThamFBirchM8][false][false]]|
+
+
+$${WAIT(1)}$$|
+//replace [[251]&>[wool]] air
+$${WAIT(1)}$$|
+//replace [[251]&~[wool][1][8]] white
+$${WAIT(1)}$$|
+//replace [95,251] air
+
+$${WAIT(1)}$$|
+//replace [[air]&~[yellow][3][8]] yellow
+$${WAIT(1)}$$|
+//replace [[air]&~[white][2][8]] white

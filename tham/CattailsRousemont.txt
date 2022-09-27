@@ -1,0 +1,16 @@
+//gmask >[water]
+//replace wool:2 60%wool:2,25%wool:3,15%wool:4
+$${WAIT(1)}$$
+//gmask >[wool:3]
+//replace wool:2 wool:3
+$${WAIT(1)}$$
+//gmask >[wool:4]
+//replace wool:2 wool:4
+$${WAIT(1)}$$
+//gmask
+$${WAIT(1)}$$
+//replace wool:2 2155:3
+$${WAIT(1)}$$
+//replace wool:3 2155:0
+$${WAIT(1)}$$
+//replace wool:4 air

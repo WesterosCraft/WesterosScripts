@@ -1,0 +1,337 @@
+$${PROMPT(&type,$$[type],type of pebbles : e.g. 'easternislands' 'vale' 'dorne' 'arbor' : 'sand' also works)}$$
+$${PROMPT(#cutoff,$$[cutoff],cutoff of wet pebbles in mix : number from 0-8 : 0 = all dry : 9 = all wet)}$$
+$${PROMPT(#profile,$$[profile],height profile of pebbles : number from 0-6 : see guide)}$$
+
+
+
+
+
+$${LOG(Selecting pebble type)}$$
+$${IF(%&type% == "easternislands")
+SET(#iddry,2247)
+SET(#idwet,2209)
+SET(&iddryf,2246:0)
+SET(&idwetf,2208:0)
+ELSEIF(%&type% == "ironislands")
+SET(#iddry,2248)
+SET(#idwet,2210)
+SET(&iddryf,2246:1)
+SET(&idwetf,2208:1)
+ELSEIF(%&type% == "vale")
+SET(#iddry,2249)
+SET(#idwet,2211)
+SET(&iddryf,2246:2)
+SET(&idwetf,2208:2)
+ELSEIF(%&type% == "north")
+SET(#iddry,2250)
+SET(#idwet,2212)
+SET(&iddryf,2246:3)
+SET(&idwetf,2208:3)
+ELSEIF(%&type% == "ocean")
+SET(#iddry,2251)
+SET(#idwet,2213)
+SET(&iddryf,2246:4)
+SET(&idwetf,2208:4)
+ELSEIF(%&type% == "dorne")
+SET(#iddry,2252)
+SET(#idwet,2214)
+SET(&iddryf,2246:5)
+SET(&idwetf,2208:5)
+ELSEIF(%&type% == "river")
+SET(#iddry,2253)
+SET(#idwet,2215)
+SET(&iddryf,2246:6)
+SET(&idwetf,2208:6)
+ELSEIF(%&type% == "westerlands")
+SET(#iddry,2254)
+SET(#idwet,2216)
+SET(&iddryf,2246:7)
+SET(&idwetf,2208:7)
+ELSEIF(%&type% == "arbor")
+SET(#iddry,2255)
+SET(#idwet,2217)
+SET(&iddryf,2246:8)
+SET(&idwetf,2208:8)
+ELSEIF(%&type% == "stormlands")
+SET(#iddry,2256)
+SET(#idwet,2218)
+SET(&iddryf,2246:9)
+SET(&idwetf,2208:9)
+ELSEIF(%&type% == "reach")
+SET(#iddry,2257)
+SET(#idwet,2219)
+SET(&iddryf,2246:10)
+SET(&idwetf,2208:10)
+ELSEIF(%&type% == "sand")
+SET(#iddry,2021)
+SET(#idwet,2258)
+SET(&iddryf,12:0)
+SET(&idwetf,2012:1)
+ELSE
+SET(#iddry,2247)
+SET(#idwet,2209)
+SET(&iddryf,2246:0)
+SET(&idwetf,2208:0)
+ENDIF;}$$
+
+
+
+
+
+$${LOG(Preparing gradient)}$$
+//expand 5 u
+//expand 5 d
+//gmask ~[$$[placeholder]][4][8]&<[0]
+//set red
+$${WAIT(5)}$$
+//gmask ~[red][4][8]&<[0]
+//set orange
+$${WAIT(5)}$$
+//gmask ~[orange][4][8]&<[0]
+//set yellow
+$${WAIT(5)}$$
+//gmask ~[yellow][4][8]&<[0]
+//set green
+$${WAIT(5)}$$
+//gmask ~[green][4][8]&<[0]
+//set blue
+$${WAIT(5)}$$
+//gmask ~[blue][4][8]&<[0]
+//set purple
+$${WAIT(5)}$$
+//gmask ~[purple][4][8]&<[0]
+//set pink
+$${WAIT(5)}$$
+//gmask
+
+
+
+
+
+$${LOG(Applying height profile)}$$
+$${IF(%#profile% == 1)
+ECHO(//replace [0&>[red]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[orange]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[yellow]] [%#iddry%:2])
+WAIT(1)
+ECHO(//replace [0&>[green]] [%#iddry%:3])
+WAIT(1)
+ECHO(//replace [0&>[blue]] [%#iddry%:4])
+WAIT(1)
+ECHO(//replace [0&>[purple]] [%#iddry%:5])
+WAIT(1)
+ECHO(//replace [0&>[pink]] [%#iddry%:6])
+WAIT(1)
+
+ELSEIF(%#profile% == 2)
+ECHO(//replace [0&>[red]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[orange]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[yellow]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[green]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[blue]] [%#iddry%:2])
+WAIT(1)
+ECHO(//replace [0&>[purple]] [%#iddry%:2])
+WAIT(1)
+ECHO(//replace [0&>[pink]] [%#iddry%:3])
+WAIT(1)
+
+ELSEIF(%#profile% == 3)
+ECHO(//replace [0&>[red]] [0])
+WAIT(1)
+ECHO(//replace [0&>[orange]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[yellow]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[green]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[blue]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[purple]] [%#iddry%:2])
+WAIT(1)
+ECHO(//replace [0&>[pink]] [%#iddry%:2])
+WAIT(1)
+
+ELSEIF(%#profile% == 4)
+ECHO(//replace [0&>[red]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[orange]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[yellow]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[green]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[blue]] [%#iddry%:2])
+WAIT(1)
+ECHO(//replace [0&>[purple]] [%#iddry%:4])
+WAIT(1)
+ECHO(//replace [0&>[pink]] [%#iddry%:6])
+WAIT(1)
+
+ELSEIF(%#profile% == 5)
+ECHO(//replace [0&>[red]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[orange]] [%#iddry%:1])
+WAIT(1)
+ECHO(//replace [0&>[yellow]] [%#iddry%:2])
+WAIT(1)
+ECHO(//replace [0&>[green]] [%#iddry%:3])
+WAIT(1)
+ECHO(//replace [0&>[blue]] [%#iddry%:3])
+WAIT(1)
+ECHO(//replace [0&>[purple]] [%#iddry%:4])
+WAIT(1)
+ECHO(//replace [0&>[pink]] [%#iddry%:4])
+WAIT(1)
+
+ELSEIF(%#profile% == 6)
+ECHO(//replace [0&>[red]] [%#iddry%:0])
+WAIT(1)
+ECHO(//replace [0&>[orange]] [%#iddry%:2])
+WAIT(1)
+ECHO(//replace [0&>[yellow]] [%#iddry%:4])
+WAIT(1)
+ECHO(//replace [0&>[green]] [%#iddry%:5])
+WAIT(1)
+ECHO(//replace [0&>[blue]] [%#iddry%:6])
+WAIT(1)
+ECHO(//replace [0&>[purple]] [%#iddry%:7])
+WAIT(1)
+ECHO(//replace [0&>[pink]] [%#iddry%:7])
+WAIT(1)
+
+ENDIF;}$$
+
+
+
+
+
+$${IF(%#profile% > 0)
+LOG(Applying wet mix)
+
+IF(%#cutoff% > 2)
+ECHO(//replace [%#iddry%&>[red]] #id[%#idwet%])
+WAIT(1)
+ENDIF;
+IF(%#cutoff% > 3)
+ECHO(//replace [%#iddry%&>[orange]] #id[%#idwet%])
+WAIT(1)
+ENDIF;
+IF(%#cutoff% > 4)
+ECHO(//replace [%#iddry%&>[yellow]] #id[%#idwet%])
+WAIT(1)
+ENDIF;
+IF(%#cutoff% > 5)
+ECHO(//replace [%#iddry%&>[green]] #id[%#idwet%])
+WAIT(1)
+ENDIF;
+IF(%#cutoff% > 6)
+ECHO(//replace [%#iddry%&>[blue]] #id[%#idwet%])
+WAIT(1)
+ENDIF;
+IF(%#cutoff% > 7)
+ECHO(//replace [%#iddry%&>[purple]] #id[%#idwet%])
+WAIT(1)
+ENDIF;
+IF(%#cutoff% > 8)
+ECHO(//replace [%#iddry%&>[pink]] #id[%#idwet%])
+WAIT(1)
+ENDIF;
+
+WAIT(2)
+
+IF(%#cutoff% == 0)
+ECHO(//replace [$$[placeholder]] [%&iddryf%])
+WAIT(1)
+ECHO(//replace [35] [%&iddryf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 1)
+ECHO(//replace [$$[placeholder]] %&iddryf%\,%&idwetf%)
+WAIT(1)
+ECHO(//replace [35] [%&iddryf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 2)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [%#iddry%&>[red]] #id[%#iddry%\,%#idwet%])
+WAIT(2)
+ECHO(//replace [red] %&iddryf%\,%&idwetf%)
+WAIT(1)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 3)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [%#iddry%&>[orange]] #id[%#iddry%\,%#idwet%])
+WAIT(2)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 4)
+LOG(test)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [%#iddry%&>[yellow]] #id[%#iddry%\,%#idwet%])
+WAIT(2)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 5)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [%#iddry%&>[green]] #id[%#iddry%\,%#idwet%])
+WAIT(2)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 6)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [%#iddry%&>[blue]] #id[%#iddry%\,%#idwet%])
+WAIT(2)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 7)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [%#iddry%&>[purple]] #id[%#iddry%\,%#idwet%])
+WAIT(2)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 8)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [%#iddry%&>[pink]] #id[%#iddry%\,%#idwet%])
+WAIT(2)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSEIF(%#cutoff% == 9)
+ECHO(//replace [$$[placeholder]] [%&idwetf%])
+WAIT(1)
+ECHO(//replace [35] [%&idwetf%])
+WAIT(1)
+
+ELSE
+ECHO(//replace [$$[placeholder]] [%&iddryf%])
+ECHO(//replace [35] [%&iddryf%])
+
+ENDIF;
+
+ENDIF;}$$
+
+
+
+
+
+$${LOG(Script Complete)}$$

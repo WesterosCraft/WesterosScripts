@@ -1,0 +1,62 @@
+$${LOG(Marking Tree Positions)}$$
+//replace [[air]&>[yellow]] #simplex[5][30%purple,70%35:5]
+$${WAIT(1)}$$
+//replace [[air]&>[white]] #simplex[15][80%green,20%35:5]
+$${WAIT(1)}$$
+//replace purple #simplex[7][blue]
+$${WAIT(1)}$$
+
+//replace [[blue]&~[green][1][8]] green,blue
+$${WAIT(1)}$$
+//replace [[35:5]&~[blue][1][8]] blue
+$${WAIT(1)}$$
+//replace [[35:5]&~[blue][1][8]] blue,35:5
+$${WAIT(1)}$$
+
+//replace [green] #simplex[8][80%cyan,20%2155:1]
+$${WAIT(1)}$$
+//replace [cyan] [80%2005:11,20%2155:1]
+$${WAIT(1)}$$
+//replace [35:5] #simplex[8][40%purple,40%2005:12,20%air]
+$${WAIT(1)}$$
+//replace [purple] [60%2059:2,30%2005:12,10%air]
+$${WAIT(1)}$$
+
+//replace [blue] #simplex[15][70%blue,30%red]
+$${WAIT(1)}$$
+//replace [[blue]&~[red][1][8]] red,blue
+$${WAIT(1)}$$
+
+//replace [blue] #simplex[5][80%blue,20%pink]
+$${WAIT(1)}$$
+//replace [[blue]&~[pink][1][8]] 30%pink,70%blue
+$${WAIT(1)}$$
+//replace pink 2061:8
+$${WAIT(1)}$$
+
+//replace [blue] #simplex[6][30%blue,70%pink]
+$${WAIT(1)}$$
+//replace [[blue]&~[pink][1][8]] pink,blue
+$${WAIT(1)}$$
+//replace [[wool]&<[pink]] brown
+$${WAIT(1)}$$
+
+$${LOG(Transform Wool)}$$
+//replace red 90%air,3%2006:6,7%2205:2
+$${WAIT(1)}$$
+//replace blue 90%air,3%2006:6,7%2205:2,3%2061:6,7%2061:8
+$${WAIT(1)}$$
+//replace pink air
+$${WAIT(1)}$$
+//replace [[air]&>[brown]] 2066:12
+$${WAIT(1)}$$
+//replace white #simplex[7][70%black,15%2034:0]
+$${WAIT(1)}$$
+//replace brown 2034:1
+$${WAIT(1)}$$
+//replace black #simplex[8][90%2033:4,5%dirt,5%gravel]	
+$${WAIT(1)}$$
+//replace yellow #simplex[7][70%2033:4,15%2034:1]
+$${WAIT(1)}$$
+
+$${LOG(Script Completes)}$$

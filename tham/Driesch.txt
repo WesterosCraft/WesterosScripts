@@ -1,0 +1,92 @@
+//setbiome forest
+$${WAIT(1)}$$|
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[PlaceholderLand] wool:white
+$${WAIT(2)}$$|
+//gmask >[wool:white]
+//generate -o [95:13] round(abs(x)%(4+random()))+round(abs(z)%(4+random()))==0
+$${WAIT(5)}$$|
+//gmask
+//replace [95:13]&~[95:13][1][8] air
+$${WAIT(1)}$$|
+//replace <[95:13] wool:brown
+$${WAIT(1)}$$|
+//expand 15 n|
+//expand 15 w|
+$${WAIT(2)}$$|
+//replace #offset[7][0][7][95:13] 41
+$${WAIT(2)}$$|
+//replace 41 20%[#fullcopy[PoplarM1][false][false]],20%[#fullcopy[PoplarM2][false][false]],20%[#fullcopy[PoplarM3][false][false]],10%[#fullcopy[PoplarM4][false][false]],10%[#fullcopy[PoplarM5][false][false]]
+$${WAIT(4)}$$|
+//replace 41 air
+$${WAIT(2)}$$|
+//replace [wool:white]&~[wool:brown][1][8] wool:red|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:red][1][8] wool:red,wool:white|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:red][1][8] wool:red,wool:white|
+$${WAIT(1)}$$|
+//rep wool:white #simplex[15][75%wool:white,35%wool:7]|
+$${WAIT(1)}$$|
+//rep wool:white 95%wool:white,5%wool:yellow|
+$${WAIT(1)}$$|
+//replace >[[wool:white]&![95]&~[95][1][8]] #simplex[4][50%95:0,35%95:1,15%95:2]|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:0][1][8] 95:0|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:0][1][8] 95:0|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:0][1][8] 95:0|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:1][1][8] 95:1|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:1][1][8] 95:1|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:1][1][8] 95:1|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:1][1][8] 95:1|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:2][1][8] 95:2|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:2][1][8] 95:2|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:1][1][8] 95:2,air|
+$${WAIT(1)}$$|
+//replace >[wool:white]&![95]&~[95:2][1][8] 95:2,air|
+$${WAIT(1)}$$|
+//replace >[95:0] #simplex[3][45%95:0,55%air]|
+$${WAIT(1)}$$|
+//replace >[95:1] #simplex[3][56%95:1,44%air]|
+$${WAIT(1)}$$|
+//replace >[95:2] #simplex[3][25%95:2,75%air]|
+$${WAIT(1)}$$|
+//replace >[wool:white]&[air] #simplex[23][25%95:6,75%95:4]|
+$${WAIT(1)}$$|
+//replace >[wool:4]&[air] [25%95:5,75%air]|
+$${WAIT(1)}$$|
+//replace wool:red 70%dirt,30%2033:3
+$${WAIT(2)}$$|
+//replace [35:7]&~[wool:white][1][8] wool:purple|
+$${WAIT(2)}$$|
+//replace 35:7 2034:0
+$${WAIT(2)}$$|
+//replace wool:purple dirt,2034:0
+$${WAIT(1)}$$|
+//replace wool:yellow gravel,dirt
+$${WAIT(1)}$$|
+//replace 95:6 80%2005:9,20%2059:15
+$${WAIT(1)}$$|
+//replace wool:white 85%grass,15%dirt
+$${WAIT(1)}$$|
+//replace 95:4 49%31:1,49%31:2,0.5%2062:3,0.5%2006:5
+$${WAIT(1)}$$|
+//replace 95:0 18:3
+$${WAIT(1)}$$|
+//replace 95:1 2205:3
+$${WAIT(1)}$$|
+//replace 95:2 2205:1
+$${WAIT(1)}$$|
+//replace 95:5 2155:0
+$${WAIT(1)}$$|
+//replace wool:brown dirt,gravel

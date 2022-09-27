@@ -1,0 +1,43 @@
+$${WAIT(1)}$$|
+//replace [[air]&>[white]] #simplex[8][30%95:0,70%air]
+$${WAIT(1)}$$|
+//replace ~[![95:0]][0][3]]&[95:0] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&>95:1]] 80%95:0,20%air
+$${WAIT(1)}$$|
+//replace [95:0] 18:2
+$${WAIT(1)}$$|
+//replace [95:1] 2009:7
+$${WAIT(1)}$$|
+
+//replace [[air]&>[white]] #simplex[5][30%red,70%air]
+$${WAIT(1)}$$|
+//replace red 2155:1,2005:11
+$${WAIT(1)}$$|
+
+//replace [[air]&>[white,yellow]] #simplex[9][30%green,70%air]
+$${WAIT(1)}$$|
+//replace green 2155:0
+$${WAIT(1)}$$|
+
+//replace [[air]&>[white]] #simplex[7][30%purple,70%air]
+$${WAIT(1)}$$|
+//replace purple 2059:2
+$${WAIT(1)}$$|
+
+//replace [[air]&>[white]] [97%air,1%cyan,2%black]
+$${WAIT(1)}$$|
+//replace cyan 2006:6
+$${WAIT(1)}$$|
+//replace black 2060:1
+$${WAIT(1)}$$|
+
+//replace yellow [80%2033:3,10%blue,10%2034:0]
+$${WAIT(1)}$$|
+//replace white [45%2033:3,10%blue,5%2034:0,40%grass]
+$${WAIT(1)}$$|
+//replace [air]&>[blue] 31:2
+$${WAIT(1)}$$|
+//replace brown 2034:1
+$${WAIT(1)}$$|
+//replace blue dirt

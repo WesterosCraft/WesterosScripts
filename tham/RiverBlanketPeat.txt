@@ -1,0 +1,41 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[PlaceholderLand] wool:white
+
+$${WAIT(1)}$$|
+//replace [wool:white]&~[95:3][1][8] wool:red|
+$${WAIT(1)}$$|
+//replace [wool:white]&/[45d][75d] wool:red|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:red][1][8] wool:red,wool:white
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:red][1][8] wool:red,wool:white
+$${WAIT(1)}$$|
+//replace [wool:white]&/[10d][45d] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:orange][1][8] wool:orange|
+$${WAIT(1)}$$|
+//replace [wool:white]&~[wool:orange][1][8] wool:orange,wool:white|
+$${WAIT(1)}$$|
+//replace [wool:red]&~[95:3][1][8] wool:yellow,wool:red|
+//replace [wool:yellow]&~[95:3][1][8] 80%wool:yellow,20%wool:red|
+$${WAIT(1)}$$|
+//gmask air
+$${WAIT(1)}$$|
+//replace >[wool:yellow] 2205:1,2005:1
+$${WAIT(1)}$$|
+//replace >[wool:red] 2059:2,2205:1
+$${WAIT(1)}$$|
+//replace >[wool:orange] #simplex[7][30%31:2,2%2005:11,8%2205:1,50%2059:2]|
+$${WAIT(1)}$$|
+//replace >[wool:white] #simplex[8][50%2205:6,9%2059:2,1%2006:2,10%31:2,35%31:2]|
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace wool:yellow 2034:2
+$${WAIT(1)}$$|
+//replace wool:red 2034:1
+$${WAIT(1)}$$|
+//replace wool:orange 15%dirt,5%gravel,80%grass
+$${WAIT(1)}$$|
+//replace wool:white 7%dirt,3%gravel,90%grass

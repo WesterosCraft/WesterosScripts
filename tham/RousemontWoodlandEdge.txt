@@ -1,0 +1,78 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[Inside] wool:white
+
+$${WAIT(1)}$$|
+//gmask <[air]
+$${WAIT(1)}$$|
+//replace wool&\|[$$[Outside]][1][6]]&![\|[air][1][5]] red|
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] yellow,red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] yellow,red
+$${WAIT(1)}$$|
+//replace [white] yellow|
+$${WAIT(1)}$$|
+//gmask
+
+$${WAIT(1)}$$|
+//replace [wool] #biome[forest]
+
+$${WAIT(1)}$$
+//replace [yellow] #simplex[22][30%purple,40%green,30%blue]|
+
+$${WAIT(1)}$$|
+//replace [[air]&>[purple]] #simplex[5][95:0,air]
+$${WAIT(1)}$$|
+//replace ~[![95:0]][0][3]] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&>95:1]] 80%95:0,20%air
+$${WAIT(1)}$$|
+//replace [95:0,95:1] 18:0
+
+$${WAIT(1)}$$|
+//replace [[air]&>[blue]] #simplex[5][95:2,air]
+$${WAIT(1)}$$|
+//replace ~[![95:2]][0][3]] 95:3|
+$${WAIT(1)}$$|
+//replace [[air]&>95:3]] 80%95:4,20%air
+$${WAIT(1)}$$|
+//replace ~[![95:4]][0][3]] 95:5|
+$${WAIT(1)}$$|
+//replace [[air]&>95:5]] 80%95:2,20%air
+$${WAIT(1)}$$|
+//replace [95:2,95:3,95:4,95:5] 2077:5
+
+$${WAIT(1)}$$|
+//replace [blue,purple,green] yellow
+
+$${WAIT(1)}$$|
+//replace [[air]&>[yellow]] #simplex[7][20%air,5%2205:2,5%2059:12,2%2060:11,8%black,40%cyan,20%2205:3]
+$${WAIT(1)}$$|
+//replace >[cyan] 40%2205:1,50%air
+$${WAIT(1)}$$|
+//replace cyan 90%2205:1,10%purple
+$${WAIT(1)}$$|
+//replace >[purple] 70%2205:4,30%air
+$${WAIT(1)}$$|
+//replace >[black] 40%2155:1,50%air
+
+$${WAIT(1)}$$|
+//replace [[air]&>[red]] #simplex[7][20%2155:0,10%2155:2,10%2%2205:1,5%2005:11,3%2005:2,2%2005:1,10%2205:0,50%air]|
+
+$${WAIT(1)}$$|
+//replace yellow 70%dirt,30%2033:3
+$${WAIT(1)}$$|
+//replace red 17%brown,3%gravel,80%green
+$${WAIT(1)}$$|
+//replace [[air]&>[green,brown]] #simplex[7][5%2005:9,30%31:2,40%31:1,5%2005:11,2%2006:6,1%2006:5,17%2059:2]|
+$${WAIT(1)}$$|
+//replace brown dirt
+$${WAIT(1)}$$|
+//replace purple 2205:4
+$${WAIT(1)}$$|
+//replace black 2155:1
+$${WAIT(1)}$$|
+//replace green grass

@@ -1,0 +1,67 @@
+$${LOG(Welcome to ThamsSparseSpruce Forest Gen)}$$
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace #surface&$$[PlaceholderLand] white
+$${WAIT(1)}$$|
+//replace [wool] #biome[forest]
+
+$${LOG(Marking Tree Positions)}$$
+$${WAIT(1)}$$
+//gmask [air]&>[white]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(3+random()))+round(abs(z)%(3+random()))==0
+$${WAIT(2)}$$|
+
+$${LOG(Scrub Close Calls)}$$
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [[95]&~[95][1][8]] air
+
+$${LOG(Place Spacers To Define Areas Under The Canopy)}$$
+$${WAIT(1)}$$|
+//expand 15 n,w,e,s|
+$${WAIT(1)}$$|
+//replace #offset[4][0][4][95:0] 20|
+$${WAIT(1)}$$|
+/gmask [air]
+//replace 20 [#fullcopy[SpacerM1][false][false]]
+$${WAIT(1)}$$
+/gmask
+
+$${LOG(Clean Up Markers)}$$
+$${WAIT(1)}$$
+//replace [[white]&[<168]] yellow|
+$${WAIT(1)}$$
+//replace [168,20] air|
+$${WAIT(1)}$$
+//replace <[95:0] wool:brown|
+
+$${LOG(Prep Offset Placements for Trees)}$$
+$${WAIT(1)}$$|
+//replace [95] #simplex[8][95:0,95:1]
+$${WAIT(1)}$$|
+//replace #offset[3][0][3][95:1] 20|
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:0] 21,22|
+
+$${LOG(Planting Trees)}$$
+$${WAIT(1)}$$|
+//replace 20 10%[#fullcopy[SentinelS1][false][false]],10%[#fullcopy[SentinelS2][false][false]],10%[#fullcopy[SentinelS3][false][false]],10%[#fullcopy[SentinelS4][false][false]],10%[#fullcopy[SentinelS5][false][false]]|
+$${WAIT(1)}$$|
+//replace 21 10%[#fullcopy[WolfswoodM10][false][false]],10%[#fullcopy[WolfswoodM13][false][false]],10%[#fullcopy[WolfswoodM15][false][false]],10%[#fullcopy[WolfswoodM14][false][false]]|
+//replace 22 10%[#fullcopy[WolfswoodM1][false][false]],10%[#fullcopy[WolfswoodM2][false][false]],10%[#fullcopy[WolfswoodM3][false][false]],10%[#fullcopy[WolfswoodM4][false][false]],10%[#fullcopy[WolfswoodM5][false][false]]|
+
+$${LOG(Clean Up)}$$
+$${WAIT(1)}$$|
+//replace [[20,21,22]&>[wool]] air
+$${WAIT(1)}$$|
+//replace [[20,21,22]&~[wool][1][8]] white
+$${WAIT(1)}$$|
+//replace [95:0,95:1,95:2,95:3,95:4,95:5,20,21,22,23,24,25,26] air
+$${WAIT(1)}$$|
+//replace [[air]&~[yellow][3][8]] yellow
+$${WAIT(1)}$$|
+//replace [[air]&~[white][3][8]] white
+
+$${LOG(Script Completed)}$$

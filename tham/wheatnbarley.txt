@@ -1,0 +1,28 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+/storm|
+$${WAIT(1)}$$|
+//gmask <0|
+$${WAIT(1)}$$|
+//replace $$[placeholder] farmland|
+$${WAIT(1)}$$|
+//gmask >farmland|
+$${WAIT(1)}$$|
+//replace 0 87%crops:7,10%crops:6,3%2059:3|
+$${WAIT(1)}$$|
+//gmask ~[0][2][6]|
+$${WAIT(1)}$$|
+//replace crops 5%2005:8,80%crops:7,15%crops:6|
+$${WAIT(1)}$$|
+//expand 1 north,south,east,west
+$${WAIT(1)}$$|
+//gmask ~[2005][1][2]|
+$${WAIT(1)}$$|
+//replace air 20%2005:8,80%air|
+$${WAIT(1)}$$|
+/sun|
+$${WAIT(2)}$$|
+//gmask|
+$${LOG(Script Complete)}$$|

@@ -1,0 +1,7 @@
+//expand 5 u,d
+//gmask >[$$[placeholder]]&[0]
+//set 80%2155:1,20%18:4
+$${WAIT(1)}$$
+//gmask
+//replace $$[placeholder] 3,13,2034:0
+$${WAIT(1)}$$

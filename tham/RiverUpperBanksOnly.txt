@@ -1,0 +1,45 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[PlaceholderLand] red
+
+$${LOG(Generate Birch Bushes)}$$
+$${WAIT(1)}$$|
+//replace [[air]&>[red]] #simplex[8][30%95:0,70%air]
+$${WAIT(1)}$$|
+//replace ~[![95:0]][0][3]]&[95:0] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&>95:1]] 80%95:0,20%air
+$${WAIT(1)}$$|
+//replace [95:0,95:1] 18:2
+
+$${LOG(Generate Raspberry Bushes)}$$
+$${WAIT(1)}$$|
+//replace [[air]&>[red]] #simplex[8][20%95:0,80%air]
+$${WAIT(1)}$$|
+//replace ~[![95:0]][0][3]]&[95:0] 95:1|
+$${WAIT(1)}$$|
+//replace [[air]&>95:1]] 80%95:0,20%air
+$${WAIT(1)}$$|
+//replace [95:0,95:1] 2017:5,18:3
+
+$${LOG(Planting Emergent Plants)}$$
+$${WAIT(4)}$$|
+//gmask >[wool:red]
+$${WAIT(1)}$$| 
+//replace [air] #simplex[7][30%2155:0,30%2155:3,30%2059:2,2%2006:0,1%2005:4,5%2059:13,2%2059:1]|
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace >[2155:2] 90%2155:2,10%air
+$${WAIT(1)}$$|
+//replace >[2205:3] 90%2205:3,10%air
+
+$${LOG(Setting Ground Mix)}$$
+$${WAIT(3)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace wool:red 90%2034:1,10%2034:0
+$${WAIT(1)}$$|
+//replace [[air]&>[dirt]] 31:1
+
+$${LOG(Script Completed)}$$

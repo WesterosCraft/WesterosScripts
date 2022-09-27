@@ -1,0 +1,80 @@
+//expand 10 u
+$${WAIT(1)}$$
+
+//replace [air]&>[wool]&~[17,2022,2026,2009][1][8] 41
+$${WAIT(1)}$$|
+//replace [air]&>[wool]&~[41][1][8] 41
+$${WAIT(1)}$$|
+//replace [air]&>[wool]&~[41][1][8] 41
+$${WAIT(1)}$$|
+
+//gmask >[white,yellow]&[air]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(4.5+random()))+round(abs(z)%(4.5+random()))==0
+$${WAIT(2)}$$|
+
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [[95]&~[95][1][8]] air
+$${WAIT(1)}$$|
+//replace 95 95:0,95:1,95:2
+
+$${WAIT(1)}$$|
+//replace #offset[7][0][7][95:0] 20|
+$${WAIT(1)}$$|
+//gmask air,95
+$${WAIT(1)}$$|
+//replace 20 10%[#fullcopy[ForestBeechML2][false][false]],10%[#fullcopy[ForestBeechML12][false][false]],10%[#fullcopy[ForestBeechML11][false][false]],10%[#fullcopy[ForestBeechML6][false][false]],10%[#fullcopy[ForestBeechML10][false][false]]|
+$${WAIT(1)}$$|
+//gmask
+
+$${WAIT(1)}$$|
+//replace #offset[2][0][2][95:1] 21
+$${WAIT(1)}$$|
+//gmask air,95
+$${WAIT(1)}$$|
+//replace 21 10%[#fullcopy[ThamBranchJun1][false][false]],10%[#fullcopy[ThamBranchJun2][false][false]],10%[#fullcopy[ThamBranchJun3][false][false]],10%[#fullcopy[ThamBranchJun4][false][false]],5%[#fullcopy[ThamBranchJun5][false][false]]|
+$${WAIT(1)}$$|
+//gmask
+
+$${WAIT(1)}$$|
+//replace #offset[2][0][2][95:2] 22
+$${WAIT(1)}$$|
+//gmask air,95
+$${WAIT(2)}$$|
+//replace 22 10%[#fullcopy[ThamCWD1][false][false]],10%[#fullcopy[ThamCWD2][false][false]],10%[#fullcopy[ThamCWD3][false][false]],10%[#fullcopy[ThamCWD4][false][false]],5%[#fullcopy[ThamCWD5][false][false]]|
+
+//gmask >[wool]&[air]&![2009,2076,2022,2026,17]
+$${WAIT(1)}$$
+//generate -o [95:3] round(abs(x)%(5+random()))+round(abs(z)%(4.5+random()))==0
+$${WAIT(2)}$$|
+
+$${WAIT(1)}$$|
+//gmask
+$${WAIT(1)}$$|
+//replace [[95]&~[95,2009,2076,2022,2026,17][1][8]] air
+$${WAIT(1)}$$|
+//replace [95] 70%air,30%95:3
+
+$${WAIT(1)}$$|
+//replace [air]&>[95:3] 20%95:3,80%air
+$${WAIT(1)}$$|
+//replace [air]&>[95:3] 95:3,air
+$${WAIT(1)}$$|
+//replace [air]&>[95:3] 95:3,air
+$${WAIT(1)}$$|
+//replace 95:3 2076:2
+
+$${WAIT(1)}$$|
+//replace [[20,21,22]&>[wool]] air
+$${WAIT(1)}$$|
+//replace [[20,21,22]&~[wool][1][8]] white
+$${WAIT(1)}$$|
+//replace 20,21,22,95,41 air
+$${WAIT(1)}$$|
+//replace [[air]&~[white][3][8]] white
+$${WAIT(1)}$$|
+//replace [[air]&~[yellow][2][8]] yellow
+
+$${LOG(Script Completes)}$$

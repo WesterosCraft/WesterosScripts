@@ -1,0 +1,18 @@
+//expand 1 u
+//gmask >$$[placeholder]
+//set 5%0,20%2009:4,75%18:4
+$${WAIT(2)}$$
+//gmask
+//replace $$[placeholder] 95%2,3%3,2%13
+$${WAIT(2)}$$
+//expand 1 u
+//gmask >18,2009
+//set 30%0,5%2009:4,65%18:4
+$${WAIT(2)}$$
+//expand 1 u
+//set 50%0,10%2009:4,40%18:4
+$${WAIT(2)}$$
+//expand 1 u
+//set 70%0,5%2009:4,25%18:4
+//gmask
+//sel

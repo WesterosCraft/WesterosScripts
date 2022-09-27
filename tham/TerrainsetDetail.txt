@@ -1,0 +1,40 @@
+$${LOG(This script adds slab, walls and pebbles placeholders to a target block of your choice)}$$
+$${LOG(Afterward simply replace the placeholders with the exact material you need)}$$
+
+$${LOG(Determine the top surface of your target block)}$$
+//replace air&>[$$[placeholder]] red
+$${WAIT(1)}$$|
+//replace red&\|[air][1][4] black
+$${WAIT(1)}$$|
+//replace red gray
+$${WAIT(1)}$$|
+
+$${LOG(Determine the top surface of the sides)}$$
+//replace black&\|[$$[placeholder]][1][2] #simplex[6][60%red,20%purple,20%orange]
+$${WAIT(1)}$$|
+
+$${LOG(Determine the bottom surface of the side overhang)}$$
+//replace <[$$[placeholder]]&\|[$$[placeholder]][1][2]&air yellow
+$${WAIT(1)}$$|
+//replace <[yellow]&\|[$$[placeholder]][1][2]&air yellow
+$${WAIT(1)}$$|
+
+$${LOG(Placeholder replacement)}$$
+//replace black air
+$${WAIT(1)}$$|
+$${LOG(Place slabs)}$$
+//replace red 44:3
+$${WAIT(1)}$$|
+$${LOG(Place walls)}$$
+//replace purple,yellow 139:0
+$${WAIT(1)}$$|
+//replace orange,black air
+$${WAIT(1)}$$|
+
+$${LOG(Place pebble placeholde which you can mask with Emote's RiverPebbleBank script)}$$
+//replace #solid&<gray gray
+$${WAIT(1)}$$|
+//replace gray&<[air] air
+$${WAIT(1)}$$|
+
+$${LOG(Script finished!)}$$

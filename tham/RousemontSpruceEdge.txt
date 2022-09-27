@@ -1,0 +1,61 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//replace $$[MaskedMaterial] white
+$${WAIT(1)}$$|
+//replace [wool] #biome[ForestEdge]
+
+$${LOG(Determining Direction of Edge)}$$
+$${WAIT(2)}$$|
+//gmask <[air]
+$${WAIT(1)}$$|
+//replace wool&\|[$$[OutsideAwayFromForest]][1][6]]&![\|[air][1][5]] red|
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//replace [[white]&~[red][1][8]]] red
+$${WAIT(1)}$$|
+//gmask
+
+$${LOG(Generate Spacer Positions for Trees)}$$
+$${WAIT(2)}$$
+//gmask [air]&>[white]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(2+random()))+round(abs(z)%(2+random()))==0
+$${WAIT(1)}$$
+//gmask [air]&>[red]
+$${WAIT(1)}$$
+//generate -o [95:0] round(abs(x)%(7+random()))+round(abs(z)%(7+random()))==0
+$${WAIT(1)}$$
+//gmask
+$${WAIT(1)}$$
+//replace [[95]&~[95][1][8]] air
+
+$${LOG(Tall Young Ones)}$$
+$${WAIT(2)}$$|
+//replace #offset[3][0][3][[95:0]&>[white]] 20|
+$${WAIT(1)}$$|
+//replace 20 10%[#fullcopy[SentinelY3][false][false]],10%[#fullcopy[SentinelY4][false][false]],10%[#fullcopy[SentinelY5][false][false]],10%[#fullcopy[SentinelY6][false][false]],10%[#fullcopy[SentinelY10][false][false]]|
+$${WAIT(1)}$$|
+
+$${LOG(Low Young Ones)}$$
+$${WAIT(2)}$$|
+//replace #offset[3][0][3][[95:0]&>[red]] 21|
+$${WAIT(1)}$$|
+//replace 21 10%[#fullcopy[SentinelY1][false][false]],10%[#fullcopy[SentinelY2][false][false]],10%[#fullcopy[SentinelY7][false][false]],10%[#fullcopy[SentinelY8][false][false]],10%[#fullcopy[SentinelY9][false][false]]|
+
+$${LOG(Clean-up on Aisle 4)}$$
+$${WAIT(1)}$$|
+//replace 95,20,21 air
+
+$${LOG(Saplings)}$$
+//gmask [air]&>[white,red]
+$${WAIT(1)}$$|
+//generate -o [95:0] round(abs(x)%(5.5+random()))+round(abs(z)%(4.5+random()))==0
+$${WAIT(1)}$$
+//gmask
+$${WAIT(1)}$$
+//replace [[95]&~[95][1][8]] air
+$${WAIT(1)}$$
+//replace [95] 18:1

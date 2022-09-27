@@ -1,0 +1,23 @@
+$${PROMPT(&direction,$$[direction],direction)}$$
+$${DO($$[repeats])}$$
+//gmask >$$[placeholder]
+//set 2155:1,2063
+$${WAIT(1)}$$
+//gmask
+//expand 1 d
+//replace $$[placeholder] 2034:0,2034:1
+$${WAIT(1)}$$
+$${ECHO(//shift 1 %&direction%)}$$
+//gmask >$$[placeholder]
+//set 2155:1,2063
+$${WAIT(1)}$$
+//gmask
+//expand 1 d
+//replace $$[placeholder] 2034:0,2034:1
+$${WAIT(1)}$$
+$${ECHO(//shift 1 %&direction%)}$$
+//replace $$[placeholder] 3,13
+$${WAIT(1)}$$
+//contract 1 u
+$${ECHO(//shift 1 %&direction%)}$$
+$${LOOP}$$

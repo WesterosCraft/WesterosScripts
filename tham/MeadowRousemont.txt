@@ -1,0 +1,19 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+//gmask >grass|
+$${WAIT(1)}$$|
+//rep 0 #simplex[20][60%wool:1,30%wool:2,10%wool:3]
+$${WAIT(1)}$$|
+//rep wool:1 #simplex[10][90%wool:1,10%wool:2]
+$${WAIT(1)}$$|
+//rep wool:1 30%2059:2,30%31:1,30%31:2,1%2006:5,1%18:3
+$${WAIT(1)}$$|
+//rep wool:2 50%31:1,45%31:2,5%2059:2
+$${WAIT(1)}$$|
+//rep wool:3 95%2005:9,5%2059:15
+$${WAIT(2)}$$|
+//rep >2059:2 #simplex[5][2059:2,0]
+$${WAIT(2)}$$|
+//gmask|
+$${LOG(Script Complete)}$$|

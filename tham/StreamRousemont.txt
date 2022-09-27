@@ -1,0 +1,25 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+//rep [air]&>[$$[banksblock]] white|
+$${WAIT(1)}$$|
+//rep white #simplex[3][50%red,25%yellow,25%orange]|
+$${WAIT(1)}$$|
+//rep >[grass]&[air]&~[red][2][4] red|
+$${WAIT(1)}$$|
+//rep >[grass]&[air]&~[yellow][2][4] yellow|
+$${WAIT(1)}$$|
+//rep >[grass]&[air]&~[yellow][2][4] yellow|
+$${WAIT(1)}$$|
+//rep >[grass]&[air]&~[orange][1][2] orange|
+$${WAIT(1)}$$|
+//rep red 2155:1|
+$${WAIT(1)}$$|
+//rep yellow 2205:1 |
+$${WAIT(1)}$$|
+//rep orange 80%2155:1,20%0|
+$${WAIT(2)}$$|
+//gmask|
+$${LOG(Script Complete)}$$|
+	

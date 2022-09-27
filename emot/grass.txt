@@ -1,0 +1,12 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+//gmask <0|
+$${WAIT(1)}$$|
+//gmask >2|
+$${WAIT(1)}$$|
+//replace 0 45%31:1,55%31:2|
+$${WAIT(2)}$$|
+$${LOG(Script Complete)}$$|
+

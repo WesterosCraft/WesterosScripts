@@ -1,0 +1,17 @@
+//expand 5 u|
+$${WAIT(1)}$$|
+//expand 5 d|
+$${WAIT(1)}$$|
+/storm|
+$${WAIT(1)}$$|
+//gmask <0|
+$${WAIT(1)}$$|
+//replace $$[placeholder] farmland|
+$${WAIT(1)}$$|
+//gmask >farmland|
+$${WAIT(1)}$$|
+//replace 0 95%141:7,5%2005:2|
+$${WAIT(1)}$$|
+/sun|
+$${WAIT(2)}$$|
+$${LOG(Script Complete)}$$|

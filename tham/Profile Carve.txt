@@ -1,0 +1,191 @@
+$${LOG(Before you start using this script)}$$
+$${LOG(make sure that you have selected ONLY the y layer of the water surface)}$$
+$${LOG(This script provides three general profiles:)}$$
+$${LOG(U-shaped, U: each step becomes one block wider)}$$
+$${LOG(U-shaped inverted, UI: the first step is as wide as the provided maximum depth, each subsequent step becomes one block shorter)}$$
+$${LOG(V-shaped, V: equal step size all the way down, you will be prompted for the step size)}$$
+$${LOG(Custom, C: you will be prompted at each step for the desired step size)}$$
+
+$${PROMPT(&type,$$[type],shape : e.g. 'U' 'UI' 'V' or 'C')}$$
+$${PROMPT(#maxdepth,$$[maxdepth],How deep would you like your river or lake to be at most?)}$$
+$${PROMPT(&water,$$[water],Provide the block name or ID of your water placeholder.)}$$
+$${PROMPT(&flow,$$[flow],Are you creating a river? 'yes' 'no')}$$
+
+$${#maxdepthminus1 = %#maxdepth% - 1}$$
+$${#maxdepthminus2 = %#maxdepth% - 2}$$
+$${#id = 1}$$
+
+$${ECHO(//expand %#maxdepth% down)}$$
+$${WAIT(2)}$$
+
+$${IF(%&flow% == "yes")
+	LOG(Prepping River)
+	PROMPT(&barrier,$$[barrier],Determine a barrier block that marks the start and end of the river segment you're terraforming)
+	ECHO(//replace <%&water% 95:0)
+	ECHO(//replace <%&barrier% %&barrier%)
+	DO(%#maxdepth%)
+		WAIT(1)
+		ECHO(//replace <95:0 95:0)
+		ECHO(//replace <%&barrier% %&barrier%)
+	LOOP
+	WAIT(3)
+	ECHO(//contract %#maxdepthminus1% up)
+	WAIT(3)
+	ECHO(//contract 1 d)
+	WAIT(2)
+	ECHO(//replace <[%&water%]&[95:0]&\|[![95:0]][1][4] 95:%#id%)
+	WAIT(2)
+	ECHO(//replace [95:%#id%]&\|[%&barrier%][1][4] 95:0)
+	WAIT(1)
+ELSE
+	LOG(Prepping Lake)
+	ECHO(//replace <%&water% 95:0)
+	DO(%#maxdepth%)
+		WAIT(1)
+		ECHO(//replace <95:0 95:0)
+	LOOP
+	WAIT(3)
+	ECHO(//contract %#maxdepthminus1% up)
+	WAIT(3)
+	ECHO(//contract 1 d)
+	WAIT(1)
+	ECHO(//replace <[%&water%]&[95:0]&\|[![95:0]][1][4] 95:%#id%)
+ENDIF;}$$
+
+
+$${IF(%&type% == "U")
+	LOG(Initiating U-shaped profile)
+	#width = 1
+	DO(%#maxdepthminus2%)
+		LOG(Adding Layer)
+		IF(%#width% == 1)
+			LOG(Skipping first layer because it's already 1 block thick)
+		ELSE
+			DO(%#width%)
+				LOG(Extending Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ENDIF;
+		WAIT(1)
+		ECHO(//shift 1 d)
+		WAIT(1)
+		ECHO(//replace [95:0]&<[95:%#id%] red)
+		INC(#width)
+		INC(#id)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ELSEIF(%&type% == "UI")
+	LOG(Initiating inverted U-shaped profile)
+	#width = #maxdepthminus2
+	DO(%#maxdepthminus2%)
+		LOG(Adding Layer)
+		DO(%#width%)
+			LOG(Extending Layer)
+			WAIT(1)
+			ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+		LOOP
+		WAIT(1)
+		ECHO(//shift 1 d)
+		WAIT(1)
+		ECHO(//replace [95:0]&<[95:%#id%] red)
+		DEC(#width)
+		INC(#id)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ELSEIF(%&type% == "V")
+	LOG(Initiating V-shaped profile)
+	PROMPT(#width,$$[width],How wide should each step be?)
+	#iteration = 1
+	DO(%#maxdepthminus2%)
+		LOG(Adding Layer)
+		IF(%#width% == 1)
+			LOG(Skipping first layer because it's already 1 block thick)
+		ELSEIF(%#iteration% == 1)
+			DO(%#width% - 1)
+				LOG(Extending First Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ELSE
+			DO(%#width%)
+				LOG(Extending Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ENDIF;
+		WAIT(1)
+		ECHO(//shift 1 d)
+		WAIT(1)
+		ECHO(//replace [95:0]&<[95:%#id%] red)
+		INC(#id)
+		INC(#iteration)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ELSEIF(%&type% == "C")
+	LOG(Initiating custom profile)
+	#iteration = 1
+	DO(%#maxdepthminus2%)
+		LOG(Adding Layer)
+		PROMPT(#width,$$[width],How wide should this step be?)
+		WAIT(1)
+		IF(%#iteration% == 1)
+			DO(%#width% - 1)
+				LOG(Extending First Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ELSE
+			DO(%#width%)
+				LOG(Extending Layer)
+				WAIT(1)
+				ECHO(//replace [95:0]&\|[95:%#id%][1][4] 95:%#id%)
+			LOOP
+		ENDIF;
+		WAIT(1)
+		ECHO(//shift 1 d)
+		WAIT(1)
+		ECHO(//replace [95:0]&<[95:%#id%] red)
+		INC(#id)
+		INC(#iteration)
+		IF(%#id% == 15)
+			#id = 1
+		ENDIF;
+		ECHO(//replace red 95:%#id%)
+	LOOP
+	LOG(Adding Last Layer)
+	ECHO(//replace [95:0] 95:%#id%)
+
+
+ENDIF;}$$
+$${ECHO(//contract %#maxdepthminus1% up)}$$
+
+
+
+
+
+
+
+
+

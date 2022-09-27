@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<variables>
+    <config name="@default">
+        <!-- CONTROL_BEANS -->
+        <template id="258">
+            <string key="direction">north</string>
+        </template>
+        <!-- CONTROL_BEETS -->
+        <template id="259">
+            <string key="direction">south</string>
+        </template>
+        <!-- CONTROL_GARLIC -->
+        <template id="263">
+            <string key="direction">north</string>
+        </template>
+        <!-- CONTROL_KALE -->
+        <template id="265">
+            <string key="direction">n</string>
+        </template>
+        <!-- CONTROL_LEEKS -->
+        <template id="266">
+            <string key="direction">south</string>
+        </template>
+        <!-- CONTROL_BUTTON 278 -->
+        <template id="278">
+            <int key="move">16</int>
+            <int key="movehorizontalstep">16</int>
+            <int key="movevertical">20</int>
+            <int key="movehorizontalreset">112</int>
+            <int key="verticalrepeats">5</int>
+            <int key="movehorizontalrest">24</int>
+            <int key="schematicoffset">4</int>
+            <int key="counter">36</int>
+            <int key="horizontalrepeats">7</int>
+        </template>
+        <!-- CONTROL_BUTTON 279 -->
+        <template id="279">
+            <int key="expandvertical">23</int>
+            <int key="movehorizontalstep">16</int>
+            <int key="movevertical">25</int>
+            <int key="movehorizontalreset">128</int>
+            <int key="verticalrepeats">2</int>
+            <int key="schematicoffset">6</int>
+            <int key="expandhorizontal">14</int>
+            <int key="counter">17</int>
+            <int key="horizontalrepeats">8</int>
+        </template>
+        <!-- CONTROL_BUTTON 287 -->
+        <template id="287">
+            <int key="iddry">2256</int>
+            <int key="profile">2</int>
+            <int key="cutoff">0</int>
+            <int key="idwet">2218</int>
+            <string key="iddryf">2246:9</string>
+            <string key="type">stormlands</string>
+            <string key="idwetf">2208:9</string>
+            <string key="placeholderwater">95:3</string>
+            <string key="placeholderbank">wool:white</string>
+        </template>
+        <!-- CONTROL_BUTTON 292 -->
+        <template id="292">
+            <string key="thinning">true</string>
+        </template>
+        <!-- CONTROL_BUTTON 314 -->
+        <template id="314">
+            <int key="barrier">1</int>
+            <int key="contractdepth">4</int>
+            <int key="maxdepthminus2">1</int>
+            <int key="maxdepthminus1">2</int>
+            <int key="width">0</int>
+            <int key="iteration">2</int>
+            <int key="id">1</int>
+            <int key="maxdepth">3</int>
+            <int key="maxdepthcontracted">2</int>
+            <string key="depth"/>
+            <string key="barrier">1</string>
+            <string key="type">UI</string>
+            <string key="water">2000:1</string>
+            <string key="flow">yes</string>
+        </template>
+        <!-- CONTROL_BUTTON 317 -->
+        <template id="317">
+            <int key="maxheight">6</int>
+            <int key="width">5</int>
+            <int key="iteration">11</int>
+            <int key="maxheightminus2">4</int>
+            <int key="maxheightminus1">5</int>
+            <int key="id">5</int>
+            <string key="area">gray</string>
+            <string key="type">S</string>
+        </template>
+        <!-- CONTROL_BUTTON 319 -->
+        <template id="319">
+            <string key="targetblock">2029:2</string>
+        </template>
+    </config>
+</variables>

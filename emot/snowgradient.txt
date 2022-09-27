@@ -1,0 +1,36 @@
+$${IF(TRUE)
+
+
+ECHO(//expand 10 u)
+ECHO(//expand 10 d)
+
+
+LOG(Setting placeholders)
+ECHO(//gmask $$[placeholder]&<[0])
+ECHO(//set 14)
+WAIT(2)
+ECHO(//gmask <[14])
+ECHO(//set 15)
+WAIT(2)
+ECHO(//gmask ~[15][2][8]&14&<[0])
+ECHO(//set 35:0)
+WAIT(2)
+
+
+LOG(Preparing gradient)
+UNSAFE(5)
+FOR(#var,0,14)
+ECHO(//gmask ~[35:%#var%][1][8]&14&<[0])
+#new = %#var% + 1
+ECHO(//set 35:%#new%)
+WAIT(5)
+NEXT;
+ENDUNSAFE
+WAIT(5)
+
+
+ECHO(//gmask)
+LOG(Script Complete)
+
+
+ENDIF;}$$
